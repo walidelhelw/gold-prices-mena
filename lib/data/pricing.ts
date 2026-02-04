@@ -97,3 +97,16 @@ export const formatCurrency = (value: number, locale: string, currency: string) 
 
 export const formatNumber = (value: number, locale: string) =>
   new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(value);
+
+export const formatPercent = (value: number, locale: string) =>
+  new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 2 }).format(value);
+
+export const getCityPremium = (citySlug: string) => {
+  let hash = 0;
+  for (let i = 0; i < citySlug.length; i += 1) {
+    hash = (hash << 5) - hash + citySlug.charCodeAt(i);
+    hash |= 0;
+  }
+  const normalized = (Math.abs(hash) % 13) - 6;
+  return normalized / 1000;
+};

@@ -8,6 +8,9 @@ import { PriceHighlights } from "@/components/prices/PriceHighlights";
 import { KaratTable } from "@/components/prices/KaratTable";
 import { BarsTable } from "@/components/prices/BarsTable";
 import { CoinsTable } from "@/components/prices/CoinsTable";
+import { PriceStickyBar } from "@/components/prices/PriceStickyBar";
+import { QuickComparison } from "@/components/prices/QuickComparison";
+import { ShareActions } from "@/components/prices/ShareActions";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { formatDate } from "@/lib/utils/format";
 import { articles } from "@/lib/data/articles";
@@ -56,12 +59,34 @@ export default async function CountryPage({
   const relatedArticles = articles.filter((article) => article.countryCodes.includes(countryData.code)).slice(0, 3);
   const countryName = countryData.name_ar;
   const cities = citiesByCountry[countryData.code] ?? [];
+  const activeCity = cities.length > 0 ? cities[new Date(snapshot.updatedAt).getUTCDate() % cities.length] : null;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gold-prices-mena.vercel.app";
+  const shareUrl = `${siteUrl}/${locale}/${countryData.code}`;
+  const priceText = `${tCountry("title", { country: countryName })} - ${formatCurrency(
+    snapshot.localPerGram,
+    locale,
+    snapshot.currency
+  )} / ${tCommon("unitGram")}`;
+  const shareText = `${tCountry("title", { country: countryName })} • ${formatCurrency(
+    snapshot.localPerGram,
+    locale,
+    snapshot.currency
+  )} / ${tCommon("unitGram")}`;
 
   return (
     <div>
       <SiteHeader locale={locale} country={countryData} countries={countries} />
 
       <main className="container-page space-y-8 pb-16">
+        <PriceStickyBar
+          locale={locale}
+          countryName={countryName}
+          localPerGram={snapshot.localPerGram}
+          currency={snapshot.currency}
+          amFixUsd={snapshot.amFixUsd}
+          pmFixUsd={snapshot.pmFixUsd}
+          updatedAt={snapshot.updatedAt}
+        />
         <section className="card p-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3 text-start">
@@ -100,6 +125,17 @@ export default async function CountryPage({
               ))}
             </div>
           ) : null}
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-xs text-brand-200/70">
+            <ShareActions priceText={priceText} shareUrl={shareUrl} shareText={shareText} />
+            {activeCity ? (
+              <span>
+                {tCommon("activeCity")}:{" "}
+                <Link className="text-brand-100" href={`/${locale}/${countryData.code}/${activeCity.slug}`}>
+                  {activeCity.name_ar}
+                </Link>
+              </span>
+            ) : null}
+          </div>
         </section>
 
         <PriceHighlights
@@ -109,6 +145,13 @@ export default async function CountryPage({
           amFixUsd={snapshot.amFixUsd}
           pmFixUsd={snapshot.pmFixUsd}
           localPerGram={snapshot.localPerGram}
+        />
+
+        <QuickComparison
+          locale={locale}
+          currency={snapshot.currency}
+          rows={snapshot.karats}
+          defaultKarat={countryData.defaultKarat}
         />
 
         <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">

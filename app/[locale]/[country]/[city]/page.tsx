@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { citiesByCountry, getCountry } from "@/lib/data/countries";
-import { buildSnapshot } from "@/lib/data/pricing";
+import { buildSnapshot, formatPercent, getCityPremium } from "@/lib/data/pricing";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { PriceHighlights } from "@/components/prices/PriceHighlights";
@@ -40,6 +40,10 @@ export default async function CityPage({
   const snapshot = buildSnapshot(countryData.code);
   const countryName = countryData.name_ar;
   const cityName = cityData.name_ar;
+  const premium = getCityPremium(cityData.slug);
+  const premiumLabel =
+    premium > 0.001 ? tCommon("aboveAverage") : premium < -0.001 ? tCommon("belowAverage") : tCommon("aroundAverage");
+  const premiumTone = premium > 0.001 ? "text-emerald-300" : premium < -0.001 ? "text-rose-300" : "text-brand-200/80";
 
   return (
     <div>
@@ -59,15 +63,27 @@ export default async function CityPage({
                 <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
               </p>
             </div>
-            <div className="rounded-2xl border border-brand-300/20 bg-brand-900/40 p-4 text-start">
-              <p className="text-xs text-brand-200/70">{tCountry("localPerGramLabel")}</p>
-              <p className="mt-2 text-3xl font-semibold text-brand-50">
-                <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi>
-              </p>
-              <p className="mt-2 text-xs text-brand-200/70">
-                {tCountry("defaultKaratLabel")} {countryData.defaultKarat}
-                {tCommon("karatSuffix")}
-              </p>
+            <div className="grid gap-3 md:w-[260px]">
+              <div className="rounded-2xl border border-brand-300/20 bg-brand-900/40 p-4 text-start">
+                <p className="text-xs text-brand-200/70">{tCountry("localPerGramLabel")}</p>
+                <p className="mt-2 text-3xl font-semibold text-brand-50">
+                  <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi>
+                </p>
+                <p className="mt-2 text-xs text-brand-200/70">
+                  {tCountry("defaultKaratLabel")} {countryData.defaultKarat}
+                  {tCommon("karatSuffix")}
+                </p>
+              </div>
+              <div className="rounded-2xl border border-brand-300/20 bg-brand-900/40 p-4 text-start">
+                <p className="text-xs text-brand-200/70">{tCommon("cityPremium")}</p>
+                <p className={`mt-2 text-2xl font-semibold ${premiumTone}`}>
+                  <bdi dir="ltr">
+                    {premium >= 0 ? "+" : "-"}
+                    {formatPercent(Math.abs(premium), locale)}
+                  </bdi>
+                </p>
+                <p className="mt-2 text-xs text-brand-200/70">{premiumLabel}</p>
+              </div>
             </div>
           </div>
         </section>
