@@ -77,7 +77,7 @@ export default async function CountryPage({
     <div>
       <SiteHeader locale={locale} country={countryData} countries={countries} />
 
-      <main className="container-page space-y-8 pb-16">
+      <main className="container-page space-y-8 pb-24 md:pb-16">
         <PriceStickyBar
           locale={locale}
           countryName={countryName}

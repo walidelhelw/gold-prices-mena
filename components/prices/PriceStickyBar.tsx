@@ -23,11 +23,22 @@ export function PriceStickyBar({
   const tCountry = useTranslations("country");
   const change = (pmFixUsd - amFixUsd) / amFixUsd;
   const changeSign = change >= 0 ? "+" : "-";
-  const changeTone = change >= 0 ? "text-emerald-300" : "text-rose-300";
+  const delta = Math.abs(change);
+  const isNeutral = delta < 0.0005;
+  const changeTone = isNeutral
+    ? "text-brand-200/80"
+    : change >= 0
+      ? "text-emerald-300"
+      : "text-rose-300";
+  const barTone = isNeutral
+    ? "border-brand-300/20 bg-brand-900/80"
+    : change >= 0
+      ? "border-emerald-400/30 bg-emerald-950/40"
+      : "border-rose-400/30 bg-rose-950/40";
 
   return (
-    <div className="sticky top-4 z-30">
-      <div className="card border border-brand-300/20 bg-brand-900/80 px-4 py-3 backdrop-blur">
+    <div className="sticky bottom-4 z-30">
+      <div className={`card border px-4 py-3 backdrop-blur ${barTone}`}>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="text-start">
             <p className="text-[11px] text-brand-200/70">{tCountry("priceBarTitle", { country: countryName })}</p>
@@ -40,11 +51,11 @@ export function PriceStickyBar({
             <span>
               {tCommon("updatedAt")}: <bdi dir="ltr">{formatDate(updatedAt, locale)}</bdi>
             </span>
-            <span className={changeTone}>
+            <span className={`rounded-full px-2 py-0.5 ${changeTone} ${isNeutral ? "bg-brand-900/40" : "bg-black/20"}`}>
               {tCommon("dailyChange")}{" "}
               <bdi dir="ltr">
                 {changeSign}
-                {formatPercent(Math.abs(change), locale)}
+                {formatPercent(delta, locale)}
               </bdi>
             </span>
           </div>
