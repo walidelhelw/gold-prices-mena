@@ -34,9 +34,9 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: AppLocale }>;
+  params: { locale: AppLocale };
 }) {
-  const { locale } = await params;
+  const { locale } = params;
   if (!locales.includes(locale)) {
     notFound();
   }
