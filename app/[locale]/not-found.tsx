@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 
 export default async function NotFound({
   params
 }: {
-  params: { locale: AppLocale };
+  params?: Promise<{ locale?: string | string[] }>;
 }) {
-  const { locale } = params;
+  const locale = resolveLocale((await params)?.locale);
   const tCommon = await getTranslations({ locale, namespace: "common" });
 
   return (

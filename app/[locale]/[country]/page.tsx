@@ -12,7 +12,7 @@ import { AdSlot } from "@/components/ads/AdSlot";
 import { formatDate } from "@/lib/utils/format";
 import { articles } from "@/lib/data/articles";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 import { formatCurrency } from "@/lib/data/pricing";
 import Link from "next/link";
 
@@ -21,9 +21,11 @@ export const revalidate = 60;
 export async function generateMetadata({
   params
 }: {
-  params: Promise<{ locale: AppLocale; country: string }>;
+  params?: Promise<{ locale?: string | string[]; country?: string }>;
 }) {
-  const { locale, country } = await params;
+  const resolvedParams = await params;
+  const locale = resolveLocale(resolvedParams?.locale);
+  const country = resolvedParams?.country ?? "";
   const t = await getTranslations({ locale, namespace: "country" });
   const countryData = getCountry(country);
   if (!countryData) return {};
@@ -37,9 +39,11 @@ export async function generateMetadata({
 export default async function CountryPage({
   params
 }: {
-  params: Promise<{ locale: AppLocale; country: string }>;
+  params?: Promise<{ locale?: string | string[]; country?: string }>;
 }) {
-  const { locale, country } = await params;
+  const resolvedParams = await params;
+  const locale = resolveLocale(resolvedParams?.locale);
+  const country = resolvedParams?.country ?? "";
   const countryData = getCountry(country);
   if (!countryData) {
     notFound();

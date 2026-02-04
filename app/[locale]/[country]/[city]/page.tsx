@@ -10,7 +10,7 @@ import { BarsTable } from "@/components/prices/BarsTable";
 import { CoinsTable } from "@/components/prices/CoinsTable";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { formatDate } from "@/lib/utils/format";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 import { formatCurrency } from "@/lib/data/pricing";
 import { countries } from "@/lib/data/countries";
 
@@ -19,9 +19,12 @@ export const revalidate = 60;
 export default async function CityPage({
   params
 }: {
-  params: Promise<{ locale: AppLocale; country: string; city: string }>;
+  params?: Promise<{ locale?: string | string[]; country?: string; city?: string }>;
 }) {
-  const { locale, country, city } = await params;
+  const resolvedParams = await params;
+  const locale = resolveLocale(resolvedParams?.locale);
+  const country = resolvedParams?.country ?? "";
+  const city = resolvedParams?.city ?? "";
   const countryData = getCountry(country);
   if (!countryData) {
     notFound();

@@ -2,8 +2,9 @@ import "../globals.css";
 
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { getMessages } from "@/lib/i18n/messages";
-import { defaultLocale, isRTL, locales, type AppLocale } from "@/lib/i18n/routing";
+import { isRTL, isSupportedLocale, locales, resolveLocale } from "@/lib/i18n/routing";
 import { Cairo, IBM_Plex_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import Script from "next/script";
@@ -34,19 +35,21 @@ export default async function LocaleLayout({
   params
 }: {
   children: React.ReactNode;
-  params: any;
+  params?: Promise<{ locale?: string | string[] }>;
 }) {
-  const { locale } = await params;
-  if (!locales.includes(locale)) {
+  const rawLocale = (await params)?.locale;
+  if (rawLocale && !isSupportedLocale(rawLocale)) {
     notFound();
   }
+  const locale = resolveLocale(rawLocale);
+  setRequestLocale(locale);
 
   const messages = await getMessages(locale);
   const direction = isRTL(locale) ? "rtl" : "ltr";
   const adsClient = process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT;
 
   return (
-    <html lang={locale ?? defaultLocale} dir={direction} className={`${cairo.variable} ${plex.variable}`}>
+    <html lang={locale} dir={direction} className={`${cairo.variable} ${plex.variable}`}>
       <body className={direction === "rtl" ? "font-ar" : "font-latin"}>
         <div className="noise-layer" aria-hidden="true" />
         {adsClient ? (

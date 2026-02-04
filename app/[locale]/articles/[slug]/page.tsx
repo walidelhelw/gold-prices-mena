@@ -5,15 +5,17 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { articles, getArticleBySlug } from "@/lib/data/articles";
 import { countries } from "@/lib/data/countries";
 import { formatDate } from "@/lib/utils/format";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 import Link from "next/link";
 
 export default async function ArticlePage({
   params
 }: {
-  params: Promise<{ locale: AppLocale; slug: string }>;
+  params?: Promise<{ locale?: string | string[]; slug?: string }>;
 }) {
-  const { locale, slug } = await params;
+  const resolvedParams = await params;
+  const locale = resolveLocale(resolvedParams?.locale);
+  const slug = resolvedParams?.slug ?? "";
   const t = await getTranslations({ locale, namespace: "articles" });
   const article = getArticleBySlug(slug);
 

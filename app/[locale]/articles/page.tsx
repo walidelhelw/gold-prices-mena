@@ -4,14 +4,14 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ArticleCard } from "@/components/articles/ArticleCard";
 import { articles } from "@/lib/data/articles";
 import { countries } from "@/lib/data/countries";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 
 export default async function ArticlesPage({
   params
 }: {
-  params: Promise<{ locale: AppLocale }>;
+  params?: Promise<{ locale?: string | string[] }>;
 }) {
-  const { locale } = await params;
+  const locale = resolveLocale((await params)?.locale);
   const t = await getTranslations({ locale, namespace: "articles" });
 
   return (

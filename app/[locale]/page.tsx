@@ -3,14 +3,14 @@ import { getTranslations } from "next-intl/server";
 import { countries } from "@/lib/data/countries";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import type { AppLocale } from "@/lib/i18n/routing";
+import { resolveLocale } from "@/lib/i18n/routing";
 
 export default async function LocaleHome({
   params
 }: {
-  params: Promise<{ locale: AppLocale }>;
+  params?: Promise<{ locale?: string | string[] }>;
 }) {
-  const { locale } = await params;
+  const locale = resolveLocale((await params)?.locale);
   const tHome = await getTranslations({ locale, namespace: "home" });
   const tCommon = await getTranslations({ locale, namespace: "common" });
 
