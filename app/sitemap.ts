@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/lib/i18n/routing";
 import { citiesByCountry, countries } from "@/lib/data/countries";
-import { articles } from "@/lib/data/articles";
+import { getFallbackArticles } from "@/lib/data/articles";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     });
 
-    articles.forEach((article) => {
+    getFallbackArticles().forEach((article) => {
       entries.push({ url: `${baseUrl}/${locale}/articles/${article.slug}`, lastModified: article.publishedAt });
     });
   });

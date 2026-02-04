@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { articles, getArticleBySlug } from "@/lib/data/articles";
+import { getArticleBySlug, getRelatedArticles } from "@/lib/data/articles";
 import { countries } from "@/lib/data/countries";
 import { formatDate } from "@/lib/utils/format";
 import { resolveLocale } from "@/lib/i18n/routing";
@@ -17,13 +17,13 @@ export default async function ArticlePage({
   const locale = resolveLocale(resolvedParams?.locale);
   const slug = resolvedParams?.slug ?? "";
   const t = await getTranslations({ locale, namespace: "articles" });
-  const article = getArticleBySlug(slug);
+  const article = await getArticleBySlug(slug);
 
   if (!article) {
     notFound();
   }
 
-  const related = articles.filter((item) => item.slug !== slug).slice(0, 3);
+  const related = await getRelatedArticles(slug, 3);
 
   return (
     <div>

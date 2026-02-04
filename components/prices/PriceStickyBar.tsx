@@ -21,7 +21,7 @@ export function PriceStickyBar({
 }) {
   const tCommon = useTranslations("common");
   const tCountry = useTranslations("country");
-  const change = (pmFixUsd - amFixUsd) / amFixUsd;
+  const change = amFixUsd ? (pmFixUsd - amFixUsd) / amFixUsd : 0;
   const changeSign = change >= 0 ? "+" : "-";
   const delta = Math.abs(change);
   const isNeutral = delta < 0.0005;

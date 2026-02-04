@@ -1,8 +1,12 @@
+import { cookies } from "next/headers";
 import { getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { countries } from "@/lib/data/countries";
+import { countries, getCountry } from "@/lib/data/countries";
 import { resolveLocale } from "@/lib/i18n/routing";
+import { getDefaultCountry, normalizeCountry } from "@/lib/utils/geo";
+import { getPriceSnapshot } from "@/lib/data/pricing-server";
+import { GoldCalculator } from "@/components/calculator/GoldCalculator";
 
 export default async function CalculatorPage({
   params
@@ -11,34 +15,25 @@ export default async function CalculatorPage({
 }) {
   const locale = resolveLocale((await params)?.locale);
   const t = await getTranslations({ locale, namespace: "calculator" });
-  const tCommon = await getTranslations({ locale, namespace: "common" });
+
+  const cookieStore = await cookies();
+  const cookieCountry = normalizeCountry(cookieStore.get("country")?.value ?? null);
+  const countryCode = cookieCountry ?? getDefaultCountry();
+  const country = getCountry(countryCode) ?? countries[0];
+  const snapshot = await getPriceSnapshot(country.code, null);
 
   return (
     <div>
-      <SiteHeader locale={locale} country={countries[0]} countries={countries} />
+      <SiteHeader locale={locale} country={country} countries={countries} />
       <main className="container-page space-y-8 pb-16">
-        <section className="card p-8 text-start">
-          <h1 className="text-3xl text-brand-50">{t("title")}</h1>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl border border-brand-400/20 p-4">
-              <p className="text-xs text-brand-200/70">{t("weight")}</p>
-              <p className="mt-3 text-lg text-brand-50">
-                <bdi dir="ltr">10.0</bdi> <span className="text-brand-200/70">{tCommon("unitGram")}</span>
-              </p>
-            </div>
-            <div className="rounded-2xl border border-brand-400/20 p-4">
-              <p className="text-xs text-brand-200/70">{t("karat")}</p>
-              <p className="mt-3 text-lg text-brand-50">
-                <bdi dir="ltr">21{tCommon("karatSuffix")}</bdi>
-              </p>
-            </div>
-            <div className="rounded-2xl border border-brand-400/20 p-4">
-              <p className="text-xs text-brand-200/70">{t("result")}</p>
-              <p className="mt-3 text-lg text-brand-50">
-                <bdi dir="ltr">1,245.00</bdi>
-              </p>
-            </div>
-          </div>
+        <GoldCalculator
+          locale={locale}
+          currency={snapshot.currency}
+          basePerGram={snapshot.localPerGram}
+        />
+        <section className="card p-6 text-start">
+          <h2 className="text-xl text-brand-50">{t("noteTitle")}</h2>
+          <p className="mt-3 text-sm text-brand-200/80">{t("noteBody")}</p>
         </section>
       </main>
       <SiteFooter />

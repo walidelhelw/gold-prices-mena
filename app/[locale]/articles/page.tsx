@@ -2,9 +2,9 @@ import { getTranslations } from "next-intl/server";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ArticleCard } from "@/components/articles/ArticleCard";
-import { articles } from "@/lib/data/articles";
 import { countries } from "@/lib/data/countries";
 import { resolveLocale } from "@/lib/i18n/routing";
+import { getArticles } from "@/lib/data/articles";
 
 export default async function ArticlesPage({
   params
@@ -13,6 +13,7 @@ export default async function ArticlesPage({
 }) {
   const locale = resolveLocale((await params)?.locale);
   const t = await getTranslations({ locale, namespace: "articles" });
+  const items = await getArticles();
 
   return (
     <div>
@@ -26,7 +27,7 @@ export default async function ArticlesPage({
         <section>
           <h2 className="mb-4 text-lg text-brand-50">{t("latest")}</h2>
           <div className="grid gap-4 md:grid-cols-3">
-            {articles.map((article) => (
+            {items.map((article) => (
               <ArticleCard key={article.slug} locale={locale} article={article} />
             ))}
           </div>

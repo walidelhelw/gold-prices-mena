@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { citiesByCountry, getCountry } from "@/lib/data/countries";
-import { buildSnapshot, formatPercent, getCityPremium } from "@/lib/data/pricing";
+import { formatPercent } from "@/lib/data/pricing";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { PriceHighlights } from "@/components/prices/PriceHighlights";
@@ -13,6 +13,8 @@ import { formatDate } from "@/lib/utils/format";
 import { resolveLocale } from "@/lib/i18n/routing";
 import { formatCurrency } from "@/lib/data/pricing";
 import { countries } from "@/lib/data/countries";
+import { getPriceSnapshot } from "@/lib/data/pricing-server";
+import { PriceStickyBar } from "@/components/prices/PriceStickyBar";
 
 export const revalidate = 60;
 
@@ -37,10 +39,10 @@ export default async function CityPage({
 
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const tCountry = await getTranslations({ locale, namespace: "country" });
-  const snapshot = buildSnapshot(countryData.code);
+  const snapshot = await getPriceSnapshot(countryData.code, cityData.slug);
   const countryName = countryData.name_ar;
   const cityName = cityData.name_ar;
-  const premium = getCityPremium(cityData.slug);
+  const premium = snapshot.premiumPct;
   const premiumLabel =
     premium > 0.001 ? tCommon("aboveAverage") : premium < -0.001 ? tCommon("belowAverage") : tCommon("aroundAverage");
   const premiumTone = premium > 0.001 ? "text-emerald-300" : premium < -0.001 ? "text-rose-300" : "text-brand-200/80";
@@ -48,7 +50,16 @@ export default async function CityPage({
   return (
     <div>
       <SiteHeader locale={locale} country={countryData} countries={countries} />
-      <main className="container-page space-y-8 pb-16">
+      <main className="container-page space-y-8 pb-24 md:pb-16">
+        <PriceStickyBar
+          locale={locale}
+          countryName={`${countryName} - ${cityName}`}
+          localPerGram={snapshot.localPerGram}
+          currency={snapshot.currency}
+          amFixUsd={snapshot.amFixUsd}
+          pmFixUsd={snapshot.pmFixUsd}
+          updatedAt={snapshot.updatedAt}
+        />
         <section className="card p-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="space-y-3 text-start">
@@ -59,7 +70,7 @@ export default async function CityPage({
                 {tCountry("title", { country: `${countryName} - ${cityName}` })}
               </h1>
               <p className="text-sm text-brand-200/80">
-                {tCommon("updatedAt")} · {tCommon("priceNow")}{" "}
+                {tCommon("updatedAt")} · {tCommon("priceNow")} {""}
                 <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
               </p>
             </div>

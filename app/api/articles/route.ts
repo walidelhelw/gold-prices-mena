@@ -1,18 +1,20 @@
 import { setupAPIRoute } from "@/lib/redis/middleware";
-import { articles } from "@/lib/data/articles";
+import { getArticles } from "@/lib/data/articles";
 
-export const GET = setupAPIRoute(async (request) => {
-  const { searchParams } = new URL(request.url);
-  const country = searchParams.get("country")?.toLowerCase();
-  const filtered = country
-    ? articles.filter((article) => article.countryCodes.includes(country))
-    : articles;
+export const GET = setupAPIRoute(
+  async (request) => {
+    const { searchParams } = new URL(request.url);
+    const country = searchParams.get("country")?.toLowerCase();
+    const limit = Number(searchParams.get("limit") ?? "0");
+    const articles = await getArticles({ country: country ?? undefined, limit: limit || undefined });
 
-  return {
-    count: filtered.length,
-    articles: filtered
-  };
-}, {
-  cacheKey: "articles",
-  cacheTTL: 300
-});
+    return {
+      count: articles.length,
+      articles
+    };
+  },
+  {
+    cacheKey: "articles",
+    cacheTTL: 300
+  }
+);

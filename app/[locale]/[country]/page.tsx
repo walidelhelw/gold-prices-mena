@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { citiesByCountry, countries, getCountry } from "@/lib/data/countries";
-import { buildSnapshot } from "@/lib/data/pricing";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { PriceHighlights } from "@/components/prices/PriceHighlights";
@@ -13,13 +12,30 @@ import { QuickComparison } from "@/components/prices/QuickComparison";
 import { ShareActions } from "@/components/prices/ShareActions";
 import { AdSlot } from "@/components/ads/AdSlot";
 import { formatDate } from "@/lib/utils/format";
-import { articles } from "@/lib/data/articles";
-import { ArticleCard } from "@/components/articles/ArticleCard";
 import { resolveLocale } from "@/lib/i18n/routing";
 import { formatCurrency } from "@/lib/data/pricing";
 import Link from "next/link";
+import { getPriceHistory, getPriceSnapshot } from "@/lib/data/pricing-server";
+import { getArticles } from "@/lib/data/articles";
+import { MarketSignals } from "@/components/prices/MarketSignals";
+import { HistoryChart, type HistoryPoint } from "@/components/prices/HistoryChart";
+import { ArticleCard } from "@/components/articles/ArticleCard";
 
 export const revalidate = 60;
+
+const buildHistoryFallback = (base: number, days = 30): HistoryPoint[] => {
+  const now = Date.now();
+  const amplitude = base * 0.015;
+  return Array.from({ length: days }, (_, index) => {
+    const offset = days - index - 1;
+    const date = new Date(now - offset * 86400000).toISOString();
+    const wave = Math.sin((index / (days - 1)) * Math.PI * 2) * amplitude;
+    return {
+      date,
+      localPerGram: base + wave
+    };
+  });
+};
 
 export async function generateMetadata({
   params
@@ -55,8 +71,11 @@ export default async function CountryPage({
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const tCountry = await getTranslations({ locale, namespace: "country" });
   const tArticles = await getTranslations({ locale, namespace: "articles" });
-  const snapshot = buildSnapshot(countryData.code);
-  const relatedArticles = articles.filter((article) => article.countryCodes.includes(countryData.code)).slice(0, 3);
+  const snapshot = await getPriceSnapshot(countryData.code, null);
+  const historyRaw = await getPriceHistory(countryData.code, 30);
+  const history = historyRaw.length ? historyRaw : buildHistoryFallback(snapshot.localPerGram, 30);
+  const relatedArticles = await getArticles({ country: countryData.code, limit: 3 });
+
   const countryName = countryData.name_ar;
   const cities = citiesByCountry[countryData.code] ?? [];
   const activeCity = cities.length > 0 ? cities[new Date(snapshot.updatedAt).getUTCDate() % cities.length] : null;
@@ -97,7 +116,7 @@ export default async function CountryPage({
                 {tCountry("title", { country: countryName })}
               </h1>
               <p className="text-sm text-brand-200/80">
-                {tCommon("updatedAt")} · {tCommon("priceNow")}{" "}
+                {tCommon("updatedAt")} · {tCommon("priceNow")} {""}
                 <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
               </p>
             </div>
@@ -129,7 +148,7 @@ export default async function CountryPage({
             <ShareActions priceText={priceText} shareUrl={shareUrl} shareText={shareText} />
             {activeCity ? (
               <span>
-                {tCommon("activeCity")}:{" "}
+                {tCommon("activeCity")}: {""}
                 <Link className="text-brand-100" href={`/${locale}/${countryData.code}/${activeCity.slug}`}>
                   {activeCity.name_ar}
                 </Link>
@@ -147,12 +166,23 @@ export default async function CountryPage({
           localPerGram={snapshot.localPerGram}
         />
 
+        <MarketSignals
+          locale={locale}
+          currency={snapshot.currency}
+          fxRate={snapshot.fxRate}
+          premiumPct={snapshot.premiumPct}
+          amFixUsd={snapshot.amFixUsd}
+          pmFixUsd={snapshot.pmFixUsd}
+        />
+
         <QuickComparison
           locale={locale}
           currency={snapshot.currency}
           rows={snapshot.karats}
           defaultKarat={countryData.defaultKarat}
         />
+
+        <HistoryChart locale={locale} currency={snapshot.currency} history={history} />
 
         <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
           <KaratTable locale={locale} currency={snapshot.currency} rows={snapshot.karats} />
@@ -166,9 +196,7 @@ export default async function CountryPage({
         <section className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
           <div className="card p-6">
             <h2 className="text-xl text-brand-50">{tCountry("analysisTitle")}</h2>
-            <p className="mt-4 text-sm text-brand-200/80">
-              {tCountry("analysisBody")}
-            </p>
+            <p className="mt-4 text-sm text-brand-200/80">{tCountry("analysisBody")}</p>
           </div>
           <AdSlot slot="analysis" />
         </section>

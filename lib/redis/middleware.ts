@@ -25,7 +25,10 @@ const getUserTier = (request: Request): UserTier => {
 };
 
 export const setupAPIRoute = <T>(
-  handler: (request: Request, context: { userTier: UserTier; userId?: string }) => Promise<T> | T,
+  handler: (
+    request: Request,
+    context: { userTier: UserTier; userId?: string }
+  ) => Promise<T | NextResponse> | T | NextResponse,
   options?: { cacheKey?: string; cacheTTL?: number }
 ) =>
   async function wrapped(request: Request) {
@@ -49,6 +52,9 @@ export const setupAPIRoute = <T>(
     }
 
     const result = await handler(request, { userTier });
+    if (result instanceof NextResponse) {
+      return result;
+    }
     const response = NextResponse.json(result);
 
     if (options?.cacheKey && options.cacheTTL && request.method === "GET") {
@@ -59,7 +65,10 @@ export const setupAPIRoute = <T>(
   };
 
 export const setupAIRoute = <T>(
-  handler: (request: Request, context: { userTier: UserTier; userId?: string }) => Promise<T> | T,
+  handler: (
+    request: Request,
+    context: { userTier: UserTier; userId?: string }
+  ) => Promise<T | NextResponse> | T | NextResponse,
   options?: { quotaType?: string }
 ) =>
   async function wrapped(request: Request) {
@@ -69,5 +78,8 @@ export const setupAIRoute = <T>(
       return NextResponse.json({ error: "Quota exceeded" }, { status: 429 });
     }
     const result = await handler(request, { userTier });
+    if (result instanceof NextResponse) {
+      return result;
+    }
     return NextResponse.json(result);
   };

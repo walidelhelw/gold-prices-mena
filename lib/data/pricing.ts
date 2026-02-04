@@ -15,78 +15,24 @@ export type PriceSnapshot = {
   spotUsd: number;
   amFixUsd: number;
   pmFixUsd: number;
+  fxRate: number;
   localPerGram: number;
+  premiumPct: number;
   karats: KaratPrice[];
   bars: { weight: number; price: number }[];
   coins: { name: string; price: number }[];
   updatedAt: string;
+  source?: string | null;
 };
 
-const fxRates: Record<string, number> = {
-  EGP: 48.9,
-  SAR: 3.75,
-  AED: 3.67,
-  KWD: 0.307,
-  QAR: 3.64,
-  BHD: 0.377,
-  OMR: 0.385
-};
+export const OUNCE_GRAMS = 31.1035;
 
-export const getFxRate = (currency: string) => fxRates[currency.toUpperCase()] ?? null;
-
-const baseSpotUsd = 2058.35;
-
-const computePerGram = (usdPrice: number, fx: number) => (usdPrice * fx) / 31.1035;
-
-export const buildSnapshot = (countryCode: string): PriceSnapshot => {
-  const country = countries.find((item) => item.code === countryCode);
-  if (!country) {
-    throw new Error(`Unknown country: ${countryCode}`);
-  }
-
-  const fx = fxRates[country.currency] ?? 1;
-  const spotUsd = baseSpotUsd;
-  const amFixUsd = baseSpotUsd + 2.1;
-  const pmFixUsd = baseSpotUsd - 1.4;
-  const localPerGram = computePerGram(spotUsd, fx);
-
-  const karats = [24, 22, 21, 20, 18, 14, 12].map((karat) => {
-    const price = localPerGram * (karat / 24);
-    return {
-      karat,
-      price,
-      buy: price * 0.995,
-      sell: price * 1.01
-    };
-  });
-
-  const bars = [1, 5, 10, 20, 50, 100, 250, 500, 1000].map((weight) => ({
-    weight,
-    price: localPerGram * weight
-  }));
-
-  const coins = [
-    { name: "جنيه ذهب", grams: 8 },
-    { name: "ليرة ذهب", grams: 7.2 },
-    { name: "سوفيرن", grams: 7.98 }
-  ].map((coin) => ({
-    name: coin.name,
-    price: localPerGram * coin.grams
-  }));
-
-  return {
-    country: country.code,
-    currency: country.currency,
-    spotUsd,
-    amFixUsd,
-    pmFixUsd,
-    localPerGram,
-    karats,
-    bars,
-    coins,
-    updatedAt: new Date().toISOString()
-  };
-};
+const barWeights = [1, 5, 10, 20, 50, 100, 250, 500, 1000];
+const coins = [
+  { name: "جنيه ذهب", grams: 8 },
+  { name: "ليرة ذهب", grams: 7.2 },
+  { name: "سوفيرن", grams: 7.98 }
+];
 
 export const formatCurrency = (value: number, locale: string, currency: string) =>
   new Intl.NumberFormat(locale, {
@@ -101,7 +47,93 @@ export const formatNumber = (value: number, locale: string) =>
 export const formatPercent = (value: number, locale: string) =>
   new Intl.NumberFormat(locale, { style: "percent", maximumFractionDigits: 2 }).format(value);
 
-export const getCityPremium = (citySlug: string) => {
+export const computeLocalPerGram = (spotUsd: number, fxRate: number, premiumPct = 0) =>
+  (spotUsd * fxRate * (1 + premiumPct)) / OUNCE_GRAMS;
+
+export const computeKaratRows = (
+  localPerGram: number,
+  buySpreadBps: number,
+  sellSpreadBps: number
+): KaratPrice[] => {
+  const buyMultiplier = 1 + buySpreadBps / 10000;
+  const sellMultiplier = 1 + sellSpreadBps / 10000;
+
+  return [24, 22, 21, 20, 18, 14, 12].map((karat) => {
+    const price = localPerGram * (karat / 24);
+    return {
+      karat,
+      price,
+      buy: price * buyMultiplier,
+      sell: price * sellMultiplier
+    };
+  });
+};
+
+export const computeBars = (localPerGram: number) =>
+  barWeights.map((weight) => ({
+    weight,
+    price: localPerGram * weight
+  }));
+
+export const computeCoins = (localPerGram: number) =>
+  coins.map((coin) => ({
+    name: coin.name,
+    price: localPerGram * coin.grams
+  }));
+
+export const buildSnapshot = ({
+  countryCode,
+  currency,
+  spotUsd,
+  amFixUsd,
+  pmFixUsd,
+  fxRate,
+  premiumPct,
+  buySpreadBps,
+  sellSpreadBps,
+  updatedAt,
+  source
+}: {
+  countryCode: string;
+  currency: string;
+  spotUsd: number;
+  amFixUsd: number;
+  pmFixUsd: number;
+  fxRate: number;
+  premiumPct: number;
+  buySpreadBps: number;
+  sellSpreadBps: number;
+  updatedAt: string;
+  source?: string | null;
+}): PriceSnapshot => {
+  const country = countries.find((item) => item.code === countryCode);
+  if (!country) {
+    throw new Error(`Unknown country: ${countryCode}`);
+  }
+
+  const localPerGram = computeLocalPerGram(spotUsd, fxRate, premiumPct);
+  const karats = computeKaratRows(localPerGram, buySpreadBps, sellSpreadBps);
+  const bars = computeBars(localPerGram);
+  const coinsList = computeCoins(localPerGram);
+
+  return {
+    country: country.code,
+    currency,
+    spotUsd,
+    amFixUsd,
+    pmFixUsd,
+    fxRate,
+    localPerGram,
+    premiumPct,
+    karats,
+    bars,
+    coins: coinsList,
+    updatedAt,
+    source
+  };
+};
+
+export const fallbackCityPremium = (citySlug: string) => {
   let hash = 0;
   for (let i = 0; i < citySlug.length; i += 1) {
     hash = (hash << 5) - hash + citySlug.charCodeAt(i);
