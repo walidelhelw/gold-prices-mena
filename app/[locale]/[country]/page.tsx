@@ -21,9 +21,9 @@ export const revalidate = 60;
 export async function generateMetadata({
   params
 }: {
-  params: { locale: AppLocale; country: string };
+  params: Promise<{ locale: AppLocale; country: string }>;
 }) {
-  const { locale, country } = params;
+  const { locale, country } = await params;
   const t = await getTranslations({ locale, namespace: "country" });
   const countryData = getCountry(country);
   if (!countryData) return {};
@@ -37,9 +37,9 @@ export async function generateMetadata({
 export default async function CountryPage({
   params
 }: {
-  params: { locale: AppLocale; country: string };
+  params: Promise<{ locale: AppLocale; country: string }>;
 }) {
-  const { locale, country } = params;
+  const { locale, country } = await params;
   const countryData = getCountry(country);
   if (!countryData) {
     notFound();

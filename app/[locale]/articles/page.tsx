@@ -9,9 +9,9 @@ import type { AppLocale } from "@/lib/i18n/routing";
 export default async function ArticlesPage({
   params
 }: {
-  params: { locale: AppLocale };
+  params: Promise<{ locale: AppLocale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "articles" });
 
   return (

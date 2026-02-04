@@ -11,9 +11,9 @@ import Link from "next/link";
 export default async function ArticlePage({
   params
 }: {
-  params: { locale: AppLocale; slug: string };
+  params: Promise<{ locale: AppLocale; slug: string }>;
 }) {
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: "articles" });
   const article = getArticleBySlug(slug);
 

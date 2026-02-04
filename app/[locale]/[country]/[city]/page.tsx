@@ -19,9 +19,9 @@ export const revalidate = 60;
 export default async function CityPage({
   params
 }: {
-  params: { locale: AppLocale; country: string; city: string };
+  params: Promise<{ locale: AppLocale; country: string; city: string }>;
 }) {
-  const { locale, country, city } = params;
+  const { locale, country, city } = await params;
   const countryData = getCountry(country);
   if (!countryData) {
     notFound();

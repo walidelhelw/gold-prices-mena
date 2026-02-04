@@ -7,9 +7,9 @@ import type { AppLocale } from "@/lib/i18n/routing";
 export default async function CalculatorPage({
   params
 }: {
-  params: { locale: AppLocale };
+  params: Promise<{ locale: AppLocale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "calculator" });
   const tCommon = await getTranslations({ locale, namespace: "common" });
 
