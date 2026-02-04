@@ -37,7 +37,7 @@ export function PriceStickyBar({
       : "border-rose-400/30 bg-rose-950/40";
 
   return (
-    <div className="sticky bottom-4 z-30">
+    <div className="fixed bottom-4 left-1/2 z-40 w-[min(1120px,90vw)] -translate-x-1/2">
       <div className={`card border px-4 py-3 backdrop-blur ${barTone}`}>
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div className="text-start">
