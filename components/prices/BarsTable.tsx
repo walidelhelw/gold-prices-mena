@@ -11,6 +11,7 @@ export function BarsTable({
   rows: { weight: number; price: number }[];
 }) {
   const t = useTranslations("country");
+  const tCommon = useTranslations("common");
 
   return (
     <div className="card overflow-hidden">
@@ -20,11 +21,12 @@ export function BarsTable({
       <div className="grid gap-3 p-6 md:grid-cols-3">
         {rows.map((row) => (
           <div key={row.weight} className="rounded-2xl border border-brand-400/20 p-4 text-sm">
-            <p className="text-brand-200/70" dir="ltr">
-              {row.weight} {t("common.unitGram")}
+            <p className="text-brand-200/70">
+              <bdi dir="ltr">{row.weight}</bdi>
+              <span className="ms-2">{tCommon("unitGram")}</span>
             </p>
-            <p className="mt-2 text-lg text-brand-50" dir="ltr">
-              {formatCurrency(row.price, locale, currency)}
+            <p className="mt-2 text-lg text-brand-50">
+              <bdi dir="ltr">{formatCurrency(row.price, locale, currency)}</bdi>
             </p>
           </div>
         ))}

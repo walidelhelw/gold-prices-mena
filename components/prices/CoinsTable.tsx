@@ -21,8 +21,8 @@ export function CoinsTable({
         {rows.map((row) => (
           <div key={row.name} className="grid grid-cols-2 gap-4 px-6 py-4 text-sm">
             <div className="text-brand-50">{row.name}</div>
-            <div className="text-brand-200/80" dir="ltr">
-              {formatCurrency(row.price, locale, currency)}
+            <div className="text-brand-200/80">
+              <bdi dir="ltr">{formatCurrency(row.price, locale, currency)}</bdi>
             </div>
           </div>
         ))}

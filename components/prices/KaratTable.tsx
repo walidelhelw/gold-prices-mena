@@ -26,12 +26,19 @@ export function KaratTable({
               {row.karat}
               {tCommon("karatSuffix")}
             </div>
-            <div className="text-brand-100" dir="ltr">
-              {formatCurrency(row.price, locale, currency)}
+            <div className="text-brand-100">
+              <bdi dir="ltr">{formatCurrency(row.price, locale, currency)}</bdi>
             </div>
-            <div className="text-brand-200/80" dir="ltr">
-              {tCommon("buy")} {formatCurrency(row.buy, locale, currency)} · {tCommon("sell")}{" "}
-              {formatCurrency(row.sell, locale, currency)}
+            <div className="text-brand-200/80">
+              {tCommon("buy")}
+              <span className="ms-2">
+                <bdi dir="ltr">{formatCurrency(row.buy, locale, currency)}</bdi>
+              </span>
+              <span className="mx-2">·</span>
+              {tCommon("sell")}
+              <span className="ms-2">
+                <bdi dir="ltr">{formatCurrency(row.sell, locale, currency)}</bdi>
+              </span>
             </div>
           </div>
         ))}
