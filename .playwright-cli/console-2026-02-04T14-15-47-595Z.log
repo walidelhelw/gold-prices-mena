@@ -1,0 +1,14 @@
+[    4850ms] [ERROR] Error: <svg> attribute width: Expected length, "auto". @ https://googleads.g.doubleclick.net/pagead/html/r20260130/r20190131/zrt_lookup_fy2021.html:17
+[    5810ms] [WARNING] [.WebGL-0x11400445a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ https://ep2.adtrafficquality.google/sodar/Klz6NWr5.html:0
+[    5812ms] [ERROR] Attestation check for Attribution Reporting on https://ad.doubleclick.net failed. @ https://gold-price-egypt.com/:0
+[    5813ms] [ERROR] Attestation check for Attribution Reporting on https://ad.doubleclick.net failed. @ https://gold-price-egypt.com/:0
+[    5814ms] [ERROR] Error: <svg> attribute width: Expected length, "auto". @ https://googleads.g.doubleclick.net/pagead/html/r20260130/r20190131/zrt_lookup_fy2021.html:17
+[    5818ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5818ms] [ERROR] Error: <svg> attribute width: Expected length, "auto". @ https://googleads.g.doubleclick.net/pagead/html/r20260130/r20190131/zrt_lookup_fy2021.html:17
+[    5821ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5824ms] [ERROR] Error: <svg> attribute width: Expected length, "auto". @ https://googleads.g.doubleclick.net/pagead/html/r20260130/r20190131/zrt_lookup_fy2021.html:17
+[    5853ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5853ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5855ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    9786ms] [WARNING] [.WebGL-0x11400445a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ https://ep2.adtrafficquality.google/sodar/Klz6NWr5.html:0
+[    9852ms] [WARNING] [.WebGL-0x11400445400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels @ https://ep2.adtrafficquality.google/sodar/sodar2/237/runner.html:0

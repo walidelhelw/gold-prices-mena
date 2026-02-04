@@ -1,0 +1,76 @@
+{
+  "common": {
+    "siteName": "Gold Prices Today",
+    "tagline": "Real-time gold prices across the Middle East",
+    "updatedAt": "Last updated",
+    "changeCountry": "Change country",
+    "selectCountry": "Select country",
+    "selectCity": "Select city",
+    "viewAll": "View all",
+    "readMore": "Read more",
+    "priceNow": "Price now",
+    "buy": "Buy",
+    "sell": "Sell",
+    "am": "AM",
+    "pm": "PM",
+    "karatSuffix": "K",
+    "unitGram": "gram",
+    "unitOunce": "ounce",
+    "unitBar": "bar",
+    "unitCoin": "coin",
+    "adsLabel": "Ad",
+    "adsPlaceholder": "Ad space",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The link may have been removed or changed.",
+    "backHome": "Back to home",
+    "disclaimer": "Prices are indicative and may vary by city and workmanship."
+  },
+  "nav": {
+    "prices": "Prices",
+    "articles": "Articles",
+    "calculator": "Calculator",
+    "about": "About"
+  },
+  "home": {
+    "heroTitle": "Real gold prices for everyday buyers",
+    "heroSubtitle": "Live by country and city, with bars, coins, and estimated workmanship.",
+    "ctaPrimary": "Go to your country",
+    "ctaSecondary": "Read daily analysis"
+  },
+  "country": {
+    "title": "Gold price today in {country}",
+    "spotTitle": "Global spot",
+    "localTitle": "Local price",
+    "fixTitle": "London Fix AM/PM",
+    "karatTable": "Karat table",
+    "barTable": "Bars",
+    "coinTable": "Gold coins",
+    "metaDescription": "Gold prices today in {country} with live updates and daily analysis.",
+    "analysisTitle": "Today’s market summary",
+    "analysisBody": "Local markets show mild swings driven by FX moves and seasonal demand. Check hourly updates and compare the day’s average before buying.",
+    "faqTitle": "FAQ",
+    "faqOneQ": "Does this include workmanship?",
+    "faqOneA": "Shown prices are for raw gold. Workmanship varies by city and dealer.",
+    "faqTwoQ": "How often does it update?",
+    "faqTwoA": "Updates every 1–5 minutes depending on sources.",
+    "faqThreeQ": "Can I buy/sell at these prices?",
+    "faqThreeA": "These are indicative prices; confirm with your local dealer."
+  },
+  "articles": {
+    "title": "Daily gold analysis",
+    "subtitle": "Short reads for buyers tracking gold movements",
+    "latest": "Latest",
+    "byline": "By the analysis team",
+    "related": "Related articles"
+  },
+  "calculator": {
+    "title": "Gold calculator",
+    "weight": "Weight",
+    "karat": "Karat",
+    "result": "Estimated value"
+  },
+  "about": {
+    "title": "Why us",
+    "body": "We focus on gold buyers, not traders, with clear local prices and practical guidance."
+  }
+}

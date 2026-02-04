@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #0f0c07;
+  --panel: #1c160c;
+  --text: #f6f0e4;
+  --muted: #cbbfa6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(180, 140, 60, 0.22), transparent 55%),
+    linear-gradient(160deg, #120e07 0%, #15100a 45%, #0c0905 100%);
+  color: var(--text);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.noise-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-ar {
+  font-family: var(--font-ar), "Cairo", system-ui, sans-serif;
+}
+
+.font-latin {
+  font-family: var(--font-latin), "IBM Plex Sans", system-ui, sans-serif;
+}
+
+.container-page {
+  width: min(1120px, 90vw);
+  margin: 0 auto;
+}
+
+.card {
+  background: rgba(20, 15, 8, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px -45px rgba(0, 0, 0, 0.6);
+}

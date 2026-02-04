@@ -1,0 +1,322 @@
+
+> gold-prices-mena@0.1.0 dev
+> next dev --hostname 0.0.0.0 --port 3000
+
+   ▲ Next.js 15.5.11
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+ ✓ Starting...
+ ⚠ Mismatching @next/swc version, detected: 15.5.7 while Next.js is on 15.5.11. Please ensure these match
+
+   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+   	- include was updated to add '.next/types/**/*.ts'
+   	- plugins was updated to add { name: 'next' }
+
+ ✓ Ready in 8.4s
+ ✓ Compiled /middleware in 284ms (147 modules)
+ ○ Compiling /[locale]/[country] ...
+ ✓ Compiled /[locale]/[country] in 3s (724 modules)
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleLayout (app/[locale]/layout.tsx:39:11)
+  37 |   params: { locale: AppLocale };
+  38 | }) {
+> 39 |   const { locale } = params;
+     |           ^
+  40 |   if (!locales.includes(locale)) {
+  41 |     notFound();
+  42 |   }
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:11)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |           ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:19)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |                   ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+ ⨯ Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router
+    at CountryPage (app/[locale]/[country]/page.tsx:48:40)
+  46 |   }
+  47 |
+> 48 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+     |                                        ^
+  49 |   const tCountry = await getTranslations({ locale, namespace: "country" });
+  50 |   const tArticles = await getTranslations({ locale, namespace: "articles" });
+  51 |   const snapshot = buildSnapshot(countryData.code); {
+  digest: '1632590560'
+}
+ ⨯ [Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router] {
+  digest: '81310603'
+}
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+ GET /ar/eg 500 in 4163ms
+ ✓ Compiled /[locale] in 158ms (708 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleLayout (app/[locale]/layout.tsx:39:11)
+  37 |   params: { locale: AppLocale };
+  38 | }) {
+> 39 |   const { locale } = params;
+     |           ^
+  40 |   if (!locales.includes(locale)) {
+  41 |     notFound();
+  42 |   }
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:11)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |           ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:19)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |                   ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+ ⨯ Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router
+    at CountryPage (app/[locale]/[country]/page.tsx:48:40)
+  46 |   }
+  47 |
+> 48 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+     |                                        ^
+  49 |   const tCountry = await getTranslations({ locale, namespace: "country" });
+  50 |   const tArticles = await getTranslations({ locale, namespace: "articles" });
+  51 |   const snapshot = buildSnapshot(countryData.code); {
+  digest: '4001595688'
+}
+ ⨯ [Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router] {
+  digest: '3651525059'
+}
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleLayout (app/[locale]/layout.tsx:39:11)
+  37 |   params: { locale: AppLocale };
+  38 | }) {
+> 39 |   const { locale } = params;
+     |           ^
+  40 |   if (!locales.includes(locale)) {
+  41 |     notFound();
+  42 |   }
+Error: Route "/[locale]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleHome (app/[locale]/page.tsx:13:11)
+  11 |   params: { locale: AppLocale };
+  12 | }) {
+> 13 |   const { locale } = params;
+     |           ^
+  14 |   const tHome = await getTranslations({ locale, namespace: "home" });
+  15 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+  16 |
+ ⨯ Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router
+    at LocaleHome (app/[locale]/page.tsx:14:38)
+  12 | }) {
+  13 |   const { locale } = params;
+> 14 |   const tHome = await getTranslations({ locale, namespace: "home" });
+     |                                      ^
+  15 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+  16 |
+  17 |   const defaultCountry = countries[0]; {
+  digest: '3540442138'
+}
+ GET /favicon.ico 404 in 707ms
+ GET /ar/eg 500 in 464ms
+Error: Route "/[locale]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleLayout (app/[locale]/layout.tsx:39:11)
+  37 |   params: { locale: AppLocale };
+  38 | }) {
+> 39 |   const { locale } = params;
+     |           ^
+  40 |   if (!locales.includes(locale)) {
+  41 |     notFound();
+  42 |   }
+Error: Route "/[locale]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleHome (app/[locale]/page.tsx:13:11)
+  11 |   params: { locale: AppLocale };
+  12 | }) {
+> 13 |   const { locale } = params;
+     |           ^
+  14 |   const tHome = await getTranslations({ locale, namespace: "home" });
+  15 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+  16 |
+ ⨯ Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router
+    at LocaleHome (app/[locale]/page.tsx:14:38)
+  12 | }) {
+  13 |   const { locale } = params;
+> 14 |   const tHome = await getTranslations({ locale, namespace: "home" });
+     |                                      ^
+  15 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+  16 |
+  17 |   const defaultCountry = countries[0]; {
+  digest: '3540442138'
+}
+ GET /favicon.ico 404 in 203ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_not-found in 371ms (699 modules)
+ GET /api/agents/outputs/dashboard/daily_brief 404 in 610ms
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at LocaleLayout (app/[locale]/layout.tsx:39:11)
+  37 |   params: { locale: AppLocale };
+  38 | }) {
+> 39 |   const { locale } = params;
+     |           ^
+  40 |   if (!locales.includes(locale)) {
+  41 |     notFound();
+  42 |   }
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:11)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |           ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at CountryPage (app/[locale]/[country]/page.tsx:42:19)
+  40 |   params: { locale: AppLocale; country: string };
+  41 | }) {
+> 42 |   const { locale, country } = params;
+     |                   ^
+  43 |   const countryData = getCountry(country);
+  44 |   if (!countryData) {
+  45 |     notFound();
+ ⨯ Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router
+    at CountryPage (app/[locale]/[country]/page.tsx:48:40)
+  46 |   }
+  47 |
+> 48 |   const tCommon = await getTranslations({ locale, namespace: "common" });
+     |                                        ^
+  49 |   const tCountry = await getTranslations({ locale, namespace: "country" });
+  50 |   const tArticles = await getTranslations({ locale, namespace: "articles" });
+  51 |   const snapshot = buildSnapshot(countryData.code); {
+  digest: '4001595688'
+}
+ ⨯ [Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router] {
+  digest: '3651525059'
+}
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.locale`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:11)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |           ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+Error: Route "/[locale]/[country]" used `params.country`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at Module.generateMetadata (app/[locale]/[country]/page.tsx:26:19)
+  24 |   params: { locale: AppLocale; country: string };
+  25 | }) {
+> 26 |   const { locale, country } = params;
+     |                   ^
+  27 |   const t = await getTranslations({ locale, namespace: "country" });
+  28 |   const countryData = getCountry(country);
+  29 |   if (!countryData) return {};
+ GET /ar/eg 500 in 630ms

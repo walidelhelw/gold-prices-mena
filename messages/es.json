@@ -1,0 +1,76 @@
+{
+  "common": {
+    "siteName": "Precio del Oro Hoy",
+    "tagline": "Precios de oro en tiempo real en Oriente Medio",
+    "updatedAt": "Última actualización",
+    "changeCountry": "Cambiar país",
+    "selectCountry": "Elegir país",
+    "selectCity": "Elegir ciudad",
+    "viewAll": "Ver todo",
+    "readMore": "Leer más",
+    "priceNow": "Precio ahora",
+    "buy": "Comprar",
+    "sell": "Vender",
+    "am": "AM",
+    "pm": "PM",
+    "karatSuffix": "K",
+    "unitGram": "gramo",
+    "unitOunce": "onza",
+    "unitBar": "lingote",
+    "unitCoin": "moneda",
+    "adsLabel": "Anuncio",
+    "adsPlaceholder": "Espacio publicitario",
+    "notFoundTitle": "Página no encontrada",
+    "notFoundBody": "El enlace puede haber sido eliminado o cambiado.",
+    "backHome": "Volver al inicio",
+    "disclaimer": "Los precios son orientativos y pueden variar según la ciudad y la mano de obra."
+  },
+  "nav": {
+    "prices": "Precios",
+    "articles": "Artículos",
+    "calculator": "Calculadora",
+    "about": "Acerca de"
+  },
+  "home": {
+    "heroTitle": "Precios reales de oro para compradores diarios",
+    "heroSubtitle": "En vivo por país y ciudad, con lingotes, monedas y mano de obra estimada.",
+    "ctaPrimary": "Ir a tu país",
+    "ctaSecondary": "Leer análisis diarios"
+  },
+  "country": {
+    "title": "Precio del oro hoy en {country}",
+    "spotTitle": "Spot global",
+    "localTitle": "Precio local",
+    "fixTitle": "Fijación de Londres AM/PM",
+    "karatTable": "Tabla de quilates",
+    "barTable": "Lingotes",
+    "coinTable": "Monedas de oro",
+    "metaDescription": "Precio del oro hoy en {country} con actualizaciones en vivo y análisis diarios.",
+    "analysisTitle": "Resumen del mercado",
+    "analysisBody": "Los mercados locales muestran variaciones suaves por tipo de cambio y demanda estacional. Revisa las actualizaciones cada hora y compara el promedio del día.",
+    "faqTitle": "Preguntas frecuentes",
+    "faqOneQ": "¿Incluye mano de obra?",
+    "faqOneA": "Los precios mostrados son del oro puro. La mano de obra varía por ciudad y vendedor.",
+    "faqTwoQ": "¿Cada cuánto se actualiza?",
+    "faqTwoA": "Se actualiza cada 1–5 minutos según las fuentes.",
+    "faqThreeQ": "¿Puedo comprar/vender a estos precios?",
+    "faqThreeA": "Son precios orientativos; confirma con tu vendedor local."
+  },
+  "articles": {
+    "title": "Análisis diario del oro",
+    "subtitle": "Lecturas cortas para compradores que siguen el mercado",
+    "latest": "Últimos",
+    "byline": "Equipo de análisis",
+    "related": "Artículos relacionados"
+  },
+  "calculator": {
+    "title": "Calculadora de oro",
+    "weight": "Peso",
+    "karat": "Quilate",
+    "result": "Valor estimado"
+  },
+  "about": {
+    "title": "Por qué nosotros",
+    "body": "Nos enfocamos en compradores de oro con precios locales claros y guía práctica."
+  }
+}

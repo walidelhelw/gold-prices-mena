@@ -1,0 +1,68 @@
+[    2800ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.goldbursa.com/uploads/pkcm-gold-price-today.jpg:0
+[    4633ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    4634ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5141ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5141ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5155ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5167ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5167ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5167ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5173ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5649ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5649ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5649ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5649ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5651ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5694ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5694ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5694ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5694ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5695ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    5699ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    8402ms] [WARNING] [itrace says] using cookieStore @ https://s.alicdn.com/@g/woodpeckerx/itrace-next/??itrace-jserror.iife.js,itrace-interface.iife.js,itrace-flow.iife.js,itrace-blank.iife.js,itrace-resource.iife.js,itrace.iife.js:5
+[    8609ms] [ERROR] Access to fetch at 'https://s.alicdn.com/@xconfig/dataphant/launch/alibaba-header-test' from origin 'https://error.alibaba.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://error.alibaba.com/error404.htm?bm=cps&src=saf&cps_sk=pph3le1n&e=10:0
+[    8610ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://s.alicdn.com/@xconfig/dataphant/launch/alibaba-header-test:0
+[   16122ms] [WARNING] document.domain mutation is ignored because the surrounding agent cluster is origin-keyed. @ https://onetalk.alibaba.com/message/weblite.htm:245
+[   16416ms] [WARNING] Deprecation warning: value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+Arguments: 
+[0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: 2/4/2026, _f: undefined, _strict: undefined, _locale: [object Object]
+Error
+    at o.createFromInputFallback (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:618225)
+    at Ln (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:643832)
+    at Jn (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:647176)
+    at zn (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:647042)
+    at Yn (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:646760)
+    at $n (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:647532)
+    at Kn (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:647566)
+    at o (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:2:615106)
+    at Object.<anonymous> (https://s.alicdn.com/@g/icbu-im/im-weblite-chat/1.0.634/index.js:2:720873)
+    at i (https://s.alicdn.com/@g/icbu-im/im-weblite-chat/1.0.634/index.js:2:369) @ https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1
+[   16625ms] Object
+[   16921ms] Uncaught (in promise) #<Object>
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1144081)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:831934)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:727443)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:728424)
+    at C (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128877)
+    at f (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129847)
+    at T (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129501)
+    at a (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128283)
+    at e.cont (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128360)
+    at C (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129148)
+    at f (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129847)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1132234)
+[   17192ms] Uncaught (in promise) #<Object>
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1144081)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:831934)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:727443)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:728424)
+    at C (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128877)
+    at f (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129847)
+    at T (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129501)
+    at a (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128283)
+    at e.cont (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1128360)
+    at C (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129148)
+    at f (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1129847)
+    at <anonymous> (https://s.alicdn.com/@g/icbu-im/im-common-assets/1.0.199/air.js:1:1132234)
+[   21400ms] [ERROR] ==== indexedDB error ====:  db connect timeout! @ https://s.alicdn.com/@g/icbu-im/im-weblite-chat/1.0.634/index.js:1
+[   77209ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ https://sc-assets-trade.cn-beijing.log.aliyuncs.com/logstores/intl_trace/track?APIVersion=0.6.0&__topic__=intl_trace-log&queueArrayNormal=[%22onepage.ma.flow.feedback.imagecontentisincorrect%22,%22messenger.landing.offlineText%22,%22messenger.landing.offlineBottomLinkText%22,%22messenger.aq.messageLimitReached%22,%22messenger.aq.supplierReducedEngagement%22,%22messenger.aq.timeLimitExceeded%22,%22im.command.title.commands%22,%22im.command.title.freetrial%22,%22chat.command.title.commands.seller%22,%22chat.command.tip.prefix.position%22,%22chat.command.tip.polish.lang%22,%22chat.polish.lang.confirm.y%22,%22chat.polish.lang.confirm.n%22,%22chat.command.set.lang%22,%22chat.command.lang.more%22,%22chat.command.title.reply%22,%22chat.command.desc.reply%22,%22chat.command.title.polish%22,%22chat.command.desc.polish%22,%22messenger.noremind.reason.notTargetBuyer%22]&queueArrayEmpty=[]&config={%22sceneName%22:%22https://onetalk.alibaba.com/message/weblite.htm%22,%22locale%22:%22en%22,%22mcmsAppname%22:%22intl-gangesweb%22,%22serviceType%22:%22%22}:0

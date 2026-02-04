@@ -1,0 +1,434 @@
+- generic [active] [ref=e1]:
+  - link "انتقل إلى المحتوى" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - navigation "Primary" [ref=e3]:
+    - generic [ref=e4]:
+      - paragraph [ref=e6]:
+        - link "أسعار الذهب السعودية" [ref=e7] [cursor=pointer]:
+          - /url: https://saudiagoldprice.com/
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "الذهب" [ref=e11] [cursor=pointer]:
+            - /url: https://saudiagoldprice.com/category/gold/
+            - text: الذهب
+            - img [ref=e13]
+          - list:
+            - listitem:
+              - link "عيار 24":
+                - /url: https://saudiagoldprice.com/24k-karat/
+            - listitem:
+              - link "عيار 22":
+                - /url: https://saudiagoldprice.com/22k-karat/
+            - listitem:
+              - link "عيار 21":
+                - /url: https://saudiagoldprice.com/21k-karat/
+            - listitem:
+              - link "عيار 18":
+                - /url: https://saudiagoldprice.com/18k-karat/
+        - listitem [ref=e15]:
+          - link "سعر الفضة" [ref=e16] [cursor=pointer]:
+            - /url: https://saudiagoldprice.com/silver/
+        - listitem [ref=e17]:
+          - link "اتصل بنا" [ref=e18] [cursor=pointer]:
+            - /url: https://saudiagoldprice.com/contact-us/
+        - listitem [ref=e19]:
+          - link "معلومات عنا" [ref=e20] [cursor=pointer]:
+            - /url: https://saudiagoldprice.com/about-us/
+        - listitem [ref=e21]:
+          - link "سياسة الخصوصية" [ref=e22] [cursor=pointer]:
+            - /url: https://saudiagoldprice.com/privacy-policy/
+  - main [ref=e26]:
+    - article [ref=e27]:
+      - generic [ref=e29]:
+        - heading "أسعار الذهب اليوم في السعودية" [level=1] [ref=e30]:
+          - strong [ref=e31]: أسعار الذهب اليوم في السعودية
+        - figure [ref=e32]:
+          - table [ref=e33]:
+            - rowgroup [ref=e34]:
+              - row "الوحدة السعر التقريبي (ر.س) السعر الشرائي (ر.س تقريباً) السعر البيعي (ر.س تقريباً)" [ref=e35]:
+                - columnheader "الوحدة" [ref=e36]
+                - columnheader "السعر التقريبي (ر.س)" [ref=e37]
+                - columnheader "السعر الشرائي (ر.س تقريباً)" [ref=e38]
+                - columnheader "السعر البيعي (ر.س تقريباً)" [ref=e39]
+            - rowgroup [ref=e40]:
+              - row "جرام عيار 24 496.2 488.7 506.0" [ref=e41]:
+                - cell "جرام عيار 24" [ref=e42]
+                - cell "496.2" [ref=e43]
+                - cell "488.7" [ref=e44]
+                - cell "506.0" [ref=e45]
+              - row "جرام عيار 22 454.8 448.0 466.0" [ref=e46]:
+                - cell "جرام عيار 22" [ref=e47]
+                - cell "454.8" [ref=e48]
+                - cell "448.0" [ref=e49]
+                - cell "466.0" [ref=e50]
+              - row "جرام عيار 21 434.0 427.3 444.0" [ref=e51]:
+                - cell "جرام عيار 21" [ref=e52]
+                - cell "434.0" [ref=e53]
+                - cell "427.3" [ref=e54]
+                - cell "444.0" [ref=e55]
+              - row "أوقية الذهب 15,435.0 15,200 15,650" [ref=e56]:
+                - cell "أوقية الذهب" [ref=e57]
+                - cell "15,435.0" [ref=e58]
+                - cell "15,200" [ref=e59]
+                - cell "15,650" [ref=e60]
+              - row "تولة الذهب 5,782.5 5,700 6,000" [ref=e61]:
+                - cell "تولة الذهب" [ref=e62]
+                - cell "5,782.5" [ref=e63]
+                - cell "5,700" [ref=e64]
+                - cell "6,000" [ref=e65]
+        - heading "أسعار الذهب المستعمل في السعودية" [level=2] [ref=e66]:
+          - strong [ref=e67]: أسعار الذهب المستعمل في السعودية
+        - figure [ref=e68]:
+          - table [ref=e69]:
+            - rowgroup [ref=e70]:
+              - row "العيار سعر الشراء المستعمل (ر.س) سعر البيع المستعمل (ر.س)" [ref=e71]:
+                - columnheader "العيار" [ref=e72]
+                - columnheader "سعر الشراء المستعمل (ر.س)" [ref=e73]
+                - columnheader "سعر البيع المستعمل (ر.س)" [ref=e74]
+            - rowgroup [ref=e75]:
+              - row "عيار 24 480 – 485 495 – 500" [ref=e76]:
+                - cell "عيار 24" [ref=e77]
+                - cell "480 – 485" [ref=e78]
+                - cell "495 – 500" [ref=e79]
+              - row "عيار 22 440 – 445 460 – 465" [ref=e80]:
+                - cell "عيار 22" [ref=e81]
+                - cell "440 – 445" [ref=e82]
+                - cell "460 – 465" [ref=e83]
+              - row "عيار 21 420 – 425 440 – 445" [ref=e84]:
+                - cell "عيار 21" [ref=e85]
+                - cell "420 – 425" [ref=e86]
+                - cell "440 – 445" [ref=e87]
+              - row "عيار 18 360 – 365 380 – 385" [ref=e88]:
+                - cell "عيار 18" [ref=e89]
+                - cell "360 – 365" [ref=e90]
+                - cell "380 – 385" [ref=e91]
+              - row "عيار 14 280 – 285 295 – 300" [ref=e92]:
+                - cell "عيار 14" [ref=e93]
+                - cell "280 – 285" [ref=e94]
+                - cell "295 – 300" [ref=e95]
+        - generic:
+          - insertion:
+            - iframe [ref=e97]:
+              
+        - heading "سعر الذهب اليوم في السعودية بالجرام" [level=2] [ref=e98]
+        - figure [ref=e99]:
+          - table [ref=e100]:
+            - rowgroup [ref=e101]:
+              - row "الوحدة السعر بالجرام (ر.س) أعلى سعر أدنى سعر التغيير" [ref=e102]:
+                - columnheader "الوحدة" [ref=e103]
+                - columnheader "السعر بالجرام (ر.س)" [ref=e104]
+                - columnheader "أعلى سعر" [ref=e105]
+                - columnheader "أدنى سعر" [ref=e106]
+                - columnheader "التغيير" [ref=e107]
+            - rowgroup [ref=e108]:
+              - row "سعر الذهب بالجرام عيار 24 496.0 500.0 492.0 5.0" [ref=e109]:
+                - cell "سعر الذهب بالجرام عيار 24" [ref=e110]
+                - cell "496.0" [ref=e111]
+                - cell "500.0" [ref=e112]
+                - cell "492.0" [ref=e113]
+                - cell "5.0" [ref=e114]
+              - row "سعر الذهب بالجرام عيار 22 455.0 460.0 450.0 4.5" [ref=e115]:
+                - cell "سعر الذهب بالجرام عيار 22" [ref=e116]
+                - cell "455.0" [ref=e117]
+                - cell "460.0" [ref=e118]
+                - cell "450.0" [ref=e119]
+                - cell "4.5" [ref=e120]
+              - row "سعر الذهب بالجرام عيار 21 434.0 438.0 430.0 4.0" [ref=e121]:
+                - cell "سعر الذهب بالجرام عيار 21" [ref=e122]
+                - cell "434.0" [ref=e123]
+                - cell "438.0" [ref=e124]
+                - cell "430.0" [ref=e125]
+                - cell "4.0" [ref=e126]
+              - row "سعر الذهب بالجرام عيار 18 372.0 375.0 368.0 3.5" [ref=e127]:
+                - cell "سعر الذهب بالجرام عيار 18" [ref=e128]
+                - cell "372.0" [ref=e129]
+                - cell "375.0" [ref=e130]
+                - cell "368.0" [ref=e131]
+                - cell "3.5" [ref=e132]
+              - row "سعر الذهب بالجرام عيار 14 288.0 292.0 285.0 3.0" [ref=e133]:
+                - cell "سعر الذهب بالجرام عيار 14" [ref=e134]
+                - cell "288.0" [ref=e135]
+                - cell "292.0" [ref=e136]
+                - cell "285.0" [ref=e137]
+                - cell "3.0" [ref=e138]
+              - row "سعر الذهب بالجرام عيار 10 164.0 167.0 162.0 2.5" [ref=e139]:
+                - cell "سعر الذهب بالجرام عيار 10" [ref=e140]
+                - cell "164.0" [ref=e141]
+                - cell "167.0" [ref=e142]
+                - cell "162.0" [ref=e143]
+                - cell "2.5" [ref=e144]
+        - insertion [ref=e146]:
+          - generic [ref=e148]:
+            - generic "هذه مواضيع مرتبطة بالمقالة وقد تهمّك" [ref=e149]: اكتشاف المزيد
+            - link "أسعار الذهب اليوم" [ref=e150] [cursor=pointer]:
+              - img [ref=e152]
+              - text: أسعار الذهب اليوم
+            - link "سعر الذهب عيار" [ref=e154] [cursor=pointer]:
+              - img [ref=e156]
+              - text: سعر الذهب عيار
+            - link "تحديث أسعار الذهب" [ref=e158] [cursor=pointer]:
+              - img [ref=e160]
+              - text: تحديث أسعار الذهب
+            - link "سبيكة ذهب" [ref=e162] [cursor=pointer]:
+              - img [ref=e164]
+              - text: سبيكة ذهب
+            - link "هدايا ذهبية مخصصة" [ref=e166] [cursor=pointer]:
+              - img [ref=e168]
+              - text: هدايا ذهبية مخصصة
+            - link "ساعات ذهبية" [ref=e170] [cursor=pointer]:
+              - img [ref=e172]
+              - text: ساعات ذهبية
+            - link "أدوات صياغة الذهب" [ref=e174] [cursor=pointer]:
+              - img [ref=e176]
+              - text: أدوات صياغة الذهب
+            - link "خدمات صيانة المجوهرات" [ref=e178] [cursor=pointer]:
+              - img [ref=e180]
+              - text: خدمات صيانة المجوهرات
+            - link "خدمات بيع الذهب المستعمل" [ref=e182] [cursor=pointer]:
+              - img [ref=e184]
+              - text: خدمات بيع الذهب المستعمل
+            - link "خدمات تقييم الذهب" [ref=e186] [cursor=pointer]:
+              - img [ref=e188]
+              - text: خدمات تقييم الذهب
+        - generic:
+          - insertion:
+            - iframe [ref=e191]:
+              
+        - heading "سعر الذهب اليوم في السعودية بالأوقية – أسعار الذهب عيار 24، 22، 21، 18" [level=2] [ref=e192]:
+          - strong [ref=e193]: سعر الذهب اليوم في السعودية بالأوقية – أسعار الذهب عيار 24، 22، 21، 18
+        - figure [ref=e194]:
+          - table [ref=e195]:
+            - rowgroup [ref=e196]:
+              - row "الوحدة السعر بالأوقية (ر.س) أعلى سعر أدنى سعر" [ref=e197]:
+                - columnheader "الوحدة" [ref=e198]
+                - columnheader "السعر بالأوقية (ر.س)" [ref=e199]
+                - columnheader "أعلى سعر" [ref=e200]
+                - columnheader "أدنى سعر" [ref=e201]
+            - rowgroup [ref=e202]:
+              - row "سعر الذهب بالأوقية عيار 24 15,421.0 15,480.0 15,350.0" [ref=e203]:
+                - cell "سعر الذهب بالأوقية عيار 24" [ref=e204]
+                - cell "15,421.0" [ref=e205]
+                - cell "15,480.0" [ref=e206]
+                - cell "15,350.0" [ref=e207]
+              - row "سعر الذهب بالأوقية عيار 22 14,112.0 14,160.0 14,050.0" [ref=e208]:
+                - cell "سعر الذهب بالأوقية عيار 22" [ref=e209]
+                - cell "14,112.0" [ref=e210]
+                - cell "14,160.0" [ref=e211]
+                - cell "14,050.0" [ref=e212]
+              - row "سعر الذهب بالأوقية عيار 21 13,500.0 13,550.0 13,450.0" [ref=e213]:
+                - cell "سعر الذهب بالأوقية عيار 21" [ref=e214]
+                - cell "13,500.0" [ref=e215]
+                - cell "13,550.0" [ref=e216]
+                - cell "13,450.0" [ref=e217]
+              - row "سعر الذهب بالأوقية عيار 18 11,550.0 11,600.0 11,500.0" [ref=e218]:
+                - cell "سعر الذهب بالأوقية عيار 18" [ref=e219]
+                - cell "11,550.0" [ref=e220]
+                - cell "11,600.0" [ref=e221]
+                - cell "11,500.0" [ref=e222]
+              - row "سعر الذهب بالأوقية عيار 14 9,000.0 9,050.0 8,950.0" [ref=e223]:
+                - cell "سعر الذهب بالأوقية عيار 14" [ref=e224]
+                - cell "9,000.0" [ref=e225]
+                - cell "9,050.0" [ref=e226]
+                - cell "8,950.0" [ref=e227]
+              - row "سعر الذهب بالأوقية عيار 10 6,400.0 6,450.0 6,350.0" [ref=e228]:
+                - cell "سعر الذهب بالأوقية عيار 10" [ref=e229]
+                - cell "6,400.0" [ref=e230]
+                - cell "6,450.0" [ref=e231]
+                - cell "6,350.0" [ref=e232]
+          - insertion [ref=e234]:
+            - generic [ref=e236]:
+              - generic "هذه مواضيع مرتبطة بالمقالة وقد تهمّك" [ref=e237]: اكتشاف المزيد
+              - link "مجوهرات ذهب" [ref=e238] [cursor=pointer]:
+                - img [ref=e240]
+                - text: مجوهرات ذهب
+              - link "مجلات عن سوق الذهب" [ref=e242] [cursor=pointer]:
+                - img [ref=e244]
+                - text: مجلات عن سوق الذهب
+              - link "مجوهرات ذهبية" [ref=e246] [cursor=pointer]:
+                - img [ref=e248]
+                - text: مجوهرات ذهبية
+              - link "سعر الذهب عيار" [ref=e250] [cursor=pointer]:
+                - img [ref=e252]
+                - text: سعر الذهب عيار
+              - link "أسعار الفضة اليوم" [ref=e254] [cursor=pointer]:
+                - img [ref=e256]
+                - text: أسعار الفضة اليوم
+              - link "أسعار الذهب اليوم" [ref=e258] [cursor=pointer]:
+                - img [ref=e260]
+                - text: أسعار الذهب اليوم
+              - link "الذهب في السعودية" [ref=e262] [cursor=pointer]:
+                - img [ref=e264]
+                - text: الذهب في السعودية
+              - link "تأمين على المجوهرات" [ref=e266] [cursor=pointer]:
+                - img [ref=e268]
+                - text: تأمين على المجوهرات
+              - link "كتب تاريخ الذهب" [ref=e270] [cursor=pointer]:
+                - img [ref=e272]
+                - text: كتب تاريخ الذهب
+              - link "سبيكة ذهب" [ref=e274] [cursor=pointer]:
+                - img [ref=e276]
+                - text: سبيكة ذهب
+        - paragraph
+        - figure [ref=e278]:
+          - table [ref=e279]:
+            - rowgroup [ref=e280]:
+              - row "اسعار الذهب في السعودية سعر الذهب بالكيلوغرام الريال السعودي أعلى سعر أدنى سعر" [ref=e281]:
+                - cell "اسعار الذهب في السعودية" [ref=e282]:
+                  - img "اسعار الذهب في السعودية" [ref=e283]
+                - cell "سعر الذهب بالكيلوغرام الريال السعودي" [ref=e284]:
+                  - text: سعر الذهب بالكيلوغرام
+                  - text: الريال السعودي
+                - cell "أعلى سعر" [ref=e285]
+                - cell "أدنى سعر" [ref=e286]
+              - row "سعر الذهب بالكيلوغرام عيار 24 390,080 390,636 386,530" [ref=e287]:
+                - cell "سعر الذهب بالكيلوغرام عيار 24" [ref=e288]
+                - cell "390,080" [ref=e289]
+                - cell "390,636" [ref=e290]
+                - cell "386,530" [ref=e291]
+              - row "سعر الذهب بالكيلوغرام عيار 22 358,093 358,604 354,835" [ref=e292]:
+                - cell "سعر الذهب بالكيلوغرام عيار 22" [ref=e293]
+                - cell "358,093" [ref=e294]
+                - cell "358,604" [ref=e295]
+                - cell "354,835" [ref=e296]
+              - row "سعر الذهب بالكيلوغرام عيار 21 341,320 341,807 338,214" [ref=e297]:
+                - cell "سعر الذهب بالكيلوغرام عيار 21" [ref=e298]
+                - cell "341,320" [ref=e299]
+                - cell "341,807" [ref=e300]
+                - cell "338,214" [ref=e301]
+              - row "سعر الذهب بالكيلوغرام عيار 18 292,560 292,977 289,898" [ref=e302]:
+                - cell "سعر الذهب بالكيلوغرام عيار 18" [ref=e303]
+                - cell "292,560" [ref=e304]
+                - cell "292,977" [ref=e305]
+                - cell "289,898" [ref=e306]
+              - row "سعر الذهب بالكيلوغرام عيار 14 228,197 228,522 226,120" [ref=e307]:
+                - cell "سعر الذهب بالكيلوغرام عيار 14" [ref=e308]
+                - cell "228,197" [ref=e309]
+                - cell "228,522" [ref=e310]
+                - cell "226,120" [ref=e311]
+              - row "سعر الذهب بالكيلوغرام عيار 10 162,663 162,895 161,183" [ref=e312]:
+                - cell "سعر الذهب بالكيلوغرام عيار 10" [ref=e313]
+                - cell "162,663" [ref=e314]
+                - cell "162,895" [ref=e315]
+                - cell "161,183" [ref=e316]
+        - paragraph
+        - paragraph
+        - figure [ref=e317]:
+          - table [ref=e318]:
+            - rowgroup [ref=e319]:
+              - row "حجم سبيكة الذهب السعر بالدولار الأمريكي السعر بالريال السعودي" [ref=e320]:
+                - columnheader "حجم سبيكة الذهب" [ref=e321]
+                - columnheader "السعر بالدولار الأمريكي" [ref=e322]
+                - columnheader "السعر بالريال السعودي" [ref=e323]
+            - rowgroup [ref=e324]:
+              - row "سبيكة ذهب 1 جرام 83.50 313.00" [ref=e325]:
+                - cell "سبيكة ذهب 1 جرام" [ref=e326]
+                - cell "83.50" [ref=e327]
+                - cell "313.00" [ref=e328]
+              - row "سبيكة ذهب 2.5 جرام 199.20 747.00" [ref=e329]:
+                - cell "سبيكة ذهب 2.5 جرام" [ref=e330]
+                - cell "199.20" [ref=e331]
+                - cell "747.00" [ref=e332]
+              - row "سبيكة ذهب 5 جرام 394.50 1,480.00" [ref=e333]:
+                - cell "سبيكة ذهب 5 جرام" [ref=e334]
+                - cell "394.50" [ref=e335]
+                - cell "1,480.00" [ref=e336]
+              - row "جنية الذهب 8ج عيار 21 637.00 2,390.00" [ref=e337]:
+                - cell "جنية الذهب 8ج عيار 21" [ref=e338]
+                - cell "637.00" [ref=e339]
+                - cell "2,390.00" [ref=e340]
+              - row "جنية الذهب 8ج عيار 22 668.00 2,502.00" [ref=e341]:
+                - cell "جنية الذهب 8ج عيار 22" [ref=e342]
+                - cell "668.00" [ref=e343]
+                - cell "2,502.00" [ref=e344]
+              - row "جنية الذهب 8ج عيار 24 728.00 2,730.00" [ref=e345]:
+                - cell "جنية الذهب 8ج عيار 24" [ref=e346]
+                - cell "728.00" [ref=e347]
+                - cell "2,730.00" [ref=e348]
+              - row "سبيكة ذهب 10 جرام 780.00 2,923.00" [ref=e349]:
+                - cell "سبيكة ذهب 10 جرام" [ref=e350]
+                - cell "780.00" [ref=e351]
+                - cell "2,923.00" [ref=e352]
+              - row "سبيكة ذهب 20 جرام 1,550.00 5,805.00" [ref=e353]:
+                - cell "سبيكة ذهب 20 جرام" [ref=e354]
+                - cell "1,550.00" [ref=e355]
+                - cell "5,805.00" [ref=e356]
+              - row "سبيكة ذهب أوقية 2,303.00 8,635.00" [ref=e357]:
+                - cell "سبيكة ذهب أوقية" [ref=e358]
+                - cell "2,303.00" [ref=e359]
+                - cell "8,635.00" [ref=e360]
+              - row "سبيكة ذهب نصف أوقية 1,206.00 4,523.00" [ref=e361]:
+                - cell "سبيكة ذهب نصف أوقية" [ref=e362]
+                - cell "1,206.00" [ref=e363]
+                - cell "4,523.00" [ref=e364]
+              - row "سبيكة ذهب أونصة 2,400.00 9,002.00" [ref=e365]:
+                - cell "سبيكة ذهب أونصة" [ref=e366]
+                - cell "2,400.00" [ref=e367]
+                - cell "9,002.00" [ref=e368]
+              - row "سبيكة ذهب 50 جرام 3,844.00 14,414.00" [ref=e369]:
+                - cell "سبيكة ذهب 50 جرام" [ref=e370]
+                - cell "3,844.00" [ref=e371]
+                - cell "14,414.00" [ref=e372]
+              - row "سبيكة ذهب 100 جرام 7,672.00 28,770.00" [ref=e373]:
+                - cell "سبيكة ذهب 100 جرام" [ref=e374]
+                - cell "7,672.00" [ref=e375]
+                - cell "28,770.00" [ref=e376]
+              - row "سبيكة ذهب تولة 909.00 3,409.00" [ref=e377]:
+                - cell "سبيكة ذهب تولة" [ref=e378]
+                - cell "909.00" [ref=e379]
+                - cell "3,409.00" [ref=e380]
+              - row "سبيكة ذهب 1 كيلو 76,342.00 286,282.00" [ref=e381]:
+                - cell "سبيكة ذهب 1 كيلو" [ref=e382]
+                - cell "76,342.00" [ref=e383]
+                - cell "286,282.00" [ref=e384]
+              - row "سبيكة ذهب نصف كيلو 38,239.00 143,397.00" [ref=e385]:
+                - cell "سبيكة ذهب نصف كيلو" [ref=e386]
+                - cell "38,239.00" [ref=e387]
+                - cell "143,397.00" [ref=e388]
+          - insertion [ref=e390]:
+            - iframe [ref=e392]:
+              
+  - insertion [ref=e394]
+  - contentinfo [ref=e397]:
+    - generic [ref=e398]:
+      - generic [ref=e399]:
+        - heading "صفحات الموقع" [level=3] [ref=e400]
+        - list [ref=e401]:
+          - listitem [ref=e402]:
+            - link "الصفحة الرئيسية" [ref=e403] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/
+          - listitem [ref=e404]:
+            - link "سعر الذهب عيار 24" [ref=e405] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/24k-karat/
+          - listitem [ref=e406]:
+            - link "سعر الذهب عيار 22" [ref=e407] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/22k-karat/
+          - listitem [ref=e408]:
+            - link "سعر الذهب عيار 21" [ref=e409] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/21k-karat/
+          - listitem [ref=e410]:
+            - link "سعر الذهب عيار 18" [ref=e411] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/18k-karat/
+          - listitem [ref=e412]:
+            - link "سعر الفضة اليوم" [ref=e413] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/silver/
+      - generic [ref=e414]:
+        - heading "معلومات هامة" [level=3] [ref=e415]
+        - list [ref=e416]:
+          - listitem [ref=e417]:
+            - link "من نحن" [ref=e418] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/about-us/
+          - listitem [ref=e419]:
+            - link "اتصل بنا" [ref=e420] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/contact-us/
+          - listitem [ref=e421]:
+            - link "سياسة الخصوصية" [ref=e422] [cursor=pointer]:
+              - /url: https://saudiagoldprice.com/privacy-policy/
+      - generic [ref=e423]:
+        - heading "تواصل معنا" [level=3] [ref=e424]
+        - list [ref=e425]:
+          - listitem [ref=e426]: الرياض، المملكة العربية السعودية
+          - listitem [ref=e427]: info@saudiagoldprice.com
+    - generic [ref=e428]: © 2026 أسعار الذهب السعودية. جميع الحقوق محفوظة.
+  - link "الذهاب إلى الأعلى" [ref=e429] [cursor=pointer]:
+    - /url: "#"
+    - img [ref=e431]
