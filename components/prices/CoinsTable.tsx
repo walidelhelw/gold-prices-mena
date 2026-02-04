@@ -17,9 +17,15 @@ export function CoinsTable({
       <div className="border-b border-brand-400/20 px-6 py-4 text-sm text-brand-200/70">
         {t("coinTable")}
       </div>
+      <div className="px-6 py-3 text-xs text-brand-200/70">
+        <div className="grid grid-cols-2 gap-4 text-start">
+          <span>{t("coinLabel")}</span>
+          <span>{t("priceLabel")}</span>
+        </div>
+      </div>
       <div className="divide-y divide-brand-400/10">
         {rows.map((row) => (
-          <div key={row.name} className="grid grid-cols-2 gap-4 px-6 py-4 text-sm">
+          <div key={row.name} className="grid grid-cols-2 gap-4 px-6 py-4 text-sm text-start">
             <div className="text-brand-50">{row.name}</div>
             <div className="text-brand-200/80">
               <bdi dir="ltr">{formatCurrency(row.price, locale, currency)}</bdi>

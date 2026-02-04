@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "Gold Prices Today",
-    "tagline": "Real-time gold prices across the Middle East",
+    "tagline": "Trusted real-time gold prices for GCC and Egypt",
     "updatedAt": "Last updated",
     "changeCountry": "Change country",
     "selectCountry": "Select country",
@@ -32,10 +32,10 @@
     "about": "About"
   },
   "home": {
-    "heroTitle": "Real gold prices for everyday buyers",
-    "heroSubtitle": "Live by country and city, with bars, coins, and estimated workmanship.",
+    "heroTitle": "Real-time gold prices for GCC and Egypt buyers",
+    "heroSubtitle": "Grams, bars, and coins with precise updates and clear price context.",
     "ctaPrimary": "Go to your country",
-    "ctaSecondary": "Read daily analysis"
+    "ctaSecondary": "Read analysis"
   },
   "country": {
     "title": "Gold price today in {country}",
@@ -45,9 +45,18 @@
     "karatTable": "Karat table",
     "barTable": "Bars",
     "coinTable": "Gold coins",
+    "localPerGramLabel": "Local price per gram",
+    "defaultKaratLabel": "Common karat",
+    "karatLabel": "Karat",
+    "priceLabel": "Price",
+    "buySellLabel": "Buy / Sell",
+    "weightLabel": "Weight",
+    "coinLabel": "Coin",
+    "sourcesTitle": "Sources & methodology",
+    "sourcesBody": "Spot price from bullion markets + local FX rate. Prices are indicative and may vary by workmanship.",
     "metaDescription": "Gold prices today in {country} with live updates and daily analysis.",
     "analysisTitle": "Today’s market summary",
-    "analysisBody": "Local markets show mild swings driven by FX moves and seasonal demand. Check hourly updates and compare the day’s average before buying.",
+    "analysisBody": "Local markets move with FX and seasonal demand. Check updates during the day and compare the daily average before buying.",
     "faqTitle": "FAQ",
     "faqOneQ": "Does this include workmanship?",
     "faqOneA": "Shown prices are for raw gold. Workmanship varies by city and dealer.",

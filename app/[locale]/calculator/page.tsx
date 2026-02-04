@@ -17,25 +17,25 @@ export default async function CalculatorPage({
     <div>
       <SiteHeader locale={locale} country={countries[0]} countries={countries} />
       <main className="container-page space-y-8 pb-16">
-        <section className="card p-8">
+        <section className="card p-8 text-start">
           <h1 className="text-3xl text-brand-50">{t("title")}</h1>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-brand-400/20 p-4">
               <p className="text-xs text-brand-200/70">{t("weight")}</p>
-              <p className="mt-3 text-lg text-brand-50" dir="ltr">
-                10.0 {tCommon("unitGram")}
+              <p className="mt-3 text-lg text-brand-50">
+                <bdi dir="ltr">10.0</bdi> <span className="text-brand-200/70">{tCommon("unitGram")}</span>
               </p>
             </div>
             <div className="rounded-2xl border border-brand-400/20 p-4">
               <p className="text-xs text-brand-200/70">{t("karat")}</p>
-              <p className="mt-3 text-lg text-brand-50" dir="ltr">
-                21{tCommon("karatSuffix")}
+              <p className="mt-3 text-lg text-brand-50">
+                <bdi dir="ltr">21{tCommon("karatSuffix")}</bdi>
               </p>
             </div>
             <div className="rounded-2xl border border-brand-400/20 p-4">
               <p className="text-xs text-brand-200/70">{t("result")}</p>
-              <p className="mt-3 text-lg text-brand-50" dir="ltr">
-                1,245.00
+              <p className="mt-3 text-lg text-brand-50">
+                <bdi dir="ltr">1,245.00</bdi>
               </p>
             </div>
           </div>

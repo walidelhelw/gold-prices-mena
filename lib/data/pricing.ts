@@ -29,13 +29,7 @@ const fxRates: Record<string, number> = {
   KWD: 0.307,
   QAR: 3.64,
   BHD: 0.377,
-  OMR: 0.385,
-  JOD: 0.709,
-  IQD: 1310,
-  LBP: 89500,
-  ILS: 3.68,
-  SYP: 13500,
-  YER: 245
+  OMR: 0.385
 };
 
 export const getFxRate = (currency: string) => fxRates[currency.toUpperCase()] ?? null;

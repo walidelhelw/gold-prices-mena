@@ -71,60 +71,6 @@ export const countries: Country[] = [
     localUnit: "ريال",
     defaultKarat: 21,
     citySlug: "muscat"
-  },
-  {
-    code: "jo",
-    name_ar: "الأردن",
-    name_en: "Jordan",
-    currency: "JOD",
-    localUnit: "دينار",
-    defaultKarat: 21,
-    citySlug: "amman"
-  },
-  {
-    code: "iq",
-    name_ar: "العراق",
-    name_en: "Iraq",
-    currency: "IQD",
-    localUnit: "دينار",
-    defaultKarat: 21,
-    citySlug: "baghdad"
-  },
-  {
-    code: "lb",
-    name_ar: "لبنان",
-    name_en: "Lebanon",
-    currency: "LBP",
-    localUnit: "ليرة",
-    defaultKarat: 21,
-    citySlug: "beirut"
-  },
-  {
-    code: "ps",
-    name_ar: "فلسطين",
-    name_en: "Palestine",
-    currency: "ILS",
-    localUnit: "شيكل",
-    defaultKarat: 21,
-    citySlug: "ramallah"
-  },
-  {
-    code: "sy",
-    name_ar: "سوريا",
-    name_en: "Syria",
-    currency: "SYP",
-    localUnit: "ليرة",
-    defaultKarat: 21,
-    citySlug: "damascus"
-  },
-  {
-    code: "ye",
-    name_ar: "اليمن",
-    name_en: "Yemen",
-    currency: "YER",
-    localUnit: "ريال",
-    defaultKarat: 21,
-    citySlug: "sanaa"
   }
 ];
 
@@ -132,48 +78,43 @@ export const citiesByCountry: Record<string, { name_ar: string; name_en: string;
   eg: [
     { name_ar: "القاهرة", name_en: "Cairo", slug: "cairo" },
     { name_ar: "الإسكندرية", name_en: "Alexandria", slug: "alexandria" },
-    { name_ar: "الجيزة", name_en: "Giza", slug: "giza" }
+    { name_ar: "الجيزة", name_en: "Giza", slug: "giza" },
+    { name_ar: "المنصورة", name_en: "Mansoura", slug: "mansoura" },
+    { name_ar: "طنطا", name_en: "Tanta", slug: "tanta" },
+    { name_ar: "المنيا", name_en: "Minya", slug: "minya" },
+    { name_ar: "أسيوط", name_en: "Assiut", slug: "assiut" },
+    { name_ar: "الإسماعيلية", name_en: "Ismailia", slug: "ismailia" }
   ],
   sa: [
     { name_ar: "الرياض", name_en: "Riyadh", slug: "riyadh" },
     { name_ar: "جدة", name_en: "Jeddah", slug: "jeddah" },
-    { name_ar: "الدمام", name_en: "Dammam", slug: "dammam" }
+    { name_ar: "الدمام", name_en: "Dammam", slug: "dammam" },
+    { name_ar: "مكة", name_en: "Makkah", slug: "makkah" },
+    { name_ar: "المدينة", name_en: "Madinah", slug: "madinah" },
+    { name_ar: "الخبر", name_en: "Khobar", slug: "khobar" }
   ],
   ae: [
     { name_ar: "دبي", name_en: "Dubai", slug: "dubai" },
     { name_ar: "أبوظبي", name_en: "Abu Dhabi", slug: "abu-dhabi" },
-    { name_ar: "الشارقة", name_en: "Sharjah", slug: "sharjah" }
+    { name_ar: "الشارقة", name_en: "Sharjah", slug: "sharjah" },
+    { name_ar: "عجمان", name_en: "Ajman", slug: "ajman" },
+    { name_ar: "رأس الخيمة", name_en: "Ras Al Khaimah", slug: "ras-al-khaimah" }
   ],
   kw: [
-    { name_ar: "مدينة الكويت", name_en: "Kuwait City", slug: "kuwait-city" }
+    { name_ar: "مدينة الكويت", name_en: "Kuwait City", slug: "kuwait-city" },
+    { name_ar: "حولي", name_en: "Hawalli", slug: "hawalli" }
   ],
   qa: [
-    { name_ar: "الدوحة", name_en: "Doha", slug: "doha" }
+    { name_ar: "الدوحة", name_en: "Doha", slug: "doha" },
+    { name_ar: "الريان", name_en: "Al Rayyan", slug: "al-rayyan" }
   ],
   bh: [
-    { name_ar: "المنامة", name_en: "Manama", slug: "manama" }
+    { name_ar: "المنامة", name_en: "Manama", slug: "manama" },
+    { name_ar: "المحرق", name_en: "Muharraq", slug: "muharraq" }
   ],
   om: [
-    { name_ar: "مسقط", name_en: "Muscat", slug: "muscat" }
-  ],
-  jo: [
-    { name_ar: "عمّان", name_en: "Amman", slug: "amman" }
-  ],
-  iq: [
-    { name_ar: "بغداد", name_en: "Baghdad", slug: "baghdad" },
-    { name_ar: "أربيل", name_en: "Erbil", slug: "erbil" }
-  ],
-  lb: [
-    { name_ar: "بيروت", name_en: "Beirut", slug: "beirut" }
-  ],
-  ps: [
-    { name_ar: "رام الله", name_en: "Ramallah", slug: "ramallah" }
-  ],
-  sy: [
-    { name_ar: "دمشق", name_en: "Damascus", slug: "damascus" }
-  ],
-  ye: [
-    { name_ar: "صنعاء", name_en: "Sanaa", slug: "sanaa" }
+    { name_ar: "مسقط", name_en: "Muscat", slug: "muscat" },
+    { name_ar: "صلالة", name_en: "Salalah", slug: "salalah" }
   ]
 };
 

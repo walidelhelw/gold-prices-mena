@@ -38,26 +38,37 @@ export default async function CityPage({
   const tCommon = await getTranslations({ locale, namespace: "common" });
   const tCountry = await getTranslations({ locale, namespace: "country" });
   const snapshot = buildSnapshot(countryData.code);
-  const countryName = locale === "ar" ? countryData.name_ar : countryData.name_en;
-  const cityName = locale === "ar" ? cityData.name_ar : cityData.name_en;
+  const countryName = countryData.name_ar;
+  const cityName = cityData.name_ar;
 
   return (
     <div>
       <SiteHeader locale={locale} country={countryData} countries={countries} />
-      <main className="container-page space-y-10 pb-16">
-        <section className="card relative overflow-hidden p-8">
-          <div className="absolute inset-0 bg-hero opacity-70" />
-          <div className="relative z-10 space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-brand-200/70" dir="ltr">
-              {formatDate(snapshot.updatedAt, locale)}
-            </p>
-            <h1 className="text-3xl font-semibold text-brand-50 md:text-4xl">
-              {tCountry("title", { country: `${countryName} - ${cityName}` })}
-            </h1>
-            <p className="text-sm text-brand-200/80">
-              {tCommon("updatedAt")} · {tCommon("priceNow")} {" "}
-              <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
-            </p>
+      <main className="container-page space-y-8 pb-16">
+        <section className="card p-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-3 text-start">
+              <p className="text-[11px] uppercase tracking-[0.35em] text-brand-200/70" dir="ltr">
+                {formatDate(snapshot.updatedAt, locale)}
+              </p>
+              <h1 className="text-3xl font-semibold text-brand-50 md:text-4xl">
+                {tCountry("title", { country: `${countryName} - ${cityName}` })}
+              </h1>
+              <p className="text-sm text-brand-200/80">
+                {tCommon("updatedAt")} · {tCommon("priceNow")}{" "}
+                <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-300/20 bg-brand-900/40 p-4 text-start">
+              <p className="text-xs text-brand-200/70">{tCountry("localPerGramLabel")}</p>
+              <p className="mt-2 text-3xl font-semibold text-brand-50">
+                <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi>
+              </p>
+              <p className="mt-2 text-xs text-brand-200/70">
+                {tCountry("defaultKaratLabel")} {countryData.defaultKarat}
+                {tCommon("karatSuffix")}
+              </p>
+            </div>
           </div>
         </section>
 

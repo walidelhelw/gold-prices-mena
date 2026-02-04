@@ -16,7 +16,7 @@ export default async function AboutPage({
     <div>
       <SiteHeader locale={locale} country={countries[0]} countries={countries} />
       <main className="container-page space-y-8 pb-16">
-        <section className="card p-8">
+        <section className="card p-8 text-start">
           <h1 className="text-3xl text-brand-50">{t("title")}</h1>
           <p className="mt-4 text-sm text-brand-200/80">{t("body")}</p>
         </section>

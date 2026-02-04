@@ -29,7 +29,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "country" });
   const countryData = getCountry(country);
   if (!countryData) return {};
-  const countryName = locale === "ar" ? countryData.name_ar : countryData.name_en;
+  const countryName = countryData.name_ar;
   return {
     title: t("title", { country: countryName }),
     description: t("metaDescription", { country: countryName })
@@ -54,41 +54,52 @@ export default async function CountryPage({
   const tArticles = await getTranslations({ locale, namespace: "articles" });
   const snapshot = buildSnapshot(countryData.code);
   const relatedArticles = articles.filter((article) => article.countryCodes.includes(countryData.code)).slice(0, 3);
-  const countryName = locale === "ar" ? countryData.name_ar : countryData.name_en;
+  const countryName = countryData.name_ar;
   const cities = citiesByCountry[countryData.code] ?? [];
 
   return (
     <div>
       <SiteHeader locale={locale} country={countryData} countries={countries} />
 
-      <main className="container-page space-y-10 pb-16">
-        <section className="card relative overflow-hidden p-8">
-          <div className="absolute inset-0 bg-hero opacity-70" />
-          <div className="relative z-10 space-y-4">
-            <p className="text-xs uppercase tracking-[0.35em] text-brand-200/70" dir="ltr">
-              {formatDate(snapshot.updatedAt, locale)}
-            </p>
-            <h1 className="text-3xl font-semibold text-brand-50 md:text-4xl">
-              {tCountry("title", { country: countryName })}
-            </h1>
-            <p className="text-sm text-brand-200/80">
-              {tCommon("updatedAt")} · {tCommon("priceNow")}{" "}
-              <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
-            </p>
-            {cities.length > 0 ? (
-              <div className="flex flex-wrap gap-2 text-xs text-brand-200/70">
-                {cities.map((city) => (
-                  <Link
-                    key={city.slug}
-                    className="rounded-full border border-brand-400/20 px-3 py-1 hover:border-brand-200"
-                    href={`/${locale}/${countryData.code}/${city.slug}`}
-                  >
-                    {locale === "ar" ? city.name_ar : city.name_en}
-                  </Link>
-                ))}
-              </div>
-            ) : null}
+      <main className="container-page space-y-8 pb-16">
+        <section className="card p-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-3 text-start">
+              <p className="text-[11px] uppercase tracking-[0.35em] text-brand-200/70" dir="ltr">
+                {formatDate(snapshot.updatedAt, locale)}
+              </p>
+              <h1 className="text-3xl font-semibold text-brand-50 md:text-4xl">
+                {tCountry("title", { country: countryName })}
+              </h1>
+              <p className="text-sm text-brand-200/80">
+                {tCommon("updatedAt")} · {tCommon("priceNow")}{" "}
+                <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi> /{tCommon("unitGram")}
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-300/20 bg-brand-900/40 p-4 text-start">
+              <p className="text-xs text-brand-200/70">{tCountry("localPerGramLabel")}</p>
+              <p className="mt-2 text-3xl font-semibold text-brand-50">
+                <bdi dir="ltr">{formatCurrency(snapshot.localPerGram, locale, snapshot.currency)}</bdi>
+              </p>
+              <p className="mt-2 text-xs text-brand-200/70">
+                {tCountry("defaultKaratLabel")} {countryData.defaultKarat}
+                {tCommon("karatSuffix")}
+              </p>
+            </div>
           </div>
+          {cities.length > 0 ? (
+            <div className="mt-6 flex flex-wrap gap-2 text-xs text-brand-200/70">
+              {cities.map((city) => (
+                <Link
+                  key={city.slug}
+                  className="rounded-full border border-brand-300/20 px-3 py-1 hover:border-brand-200"
+                  href={`/${locale}/${countryData.code}/${city.slug}`}
+                >
+                  {city.name_ar}
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </section>
 
         <PriceHighlights
@@ -117,6 +128,11 @@ export default async function CountryPage({
             </p>
           </div>
           <AdSlot slot="analysis" />
+        </section>
+
+        <section className="card p-6">
+          <h2 className="text-xl text-brand-50">{tCountry("sourcesTitle")}</h2>
+          <p className="mt-4 text-sm text-brand-200/80">{tCountry("sourcesBody")}</p>
         </section>
 
         <section className="card p-6">

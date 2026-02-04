@@ -1,7 +1,7 @@
 {
   "common": {
     "siteName": "Precio del Oro Hoy",
-    "tagline": "Precios de oro en tiempo real en Oriente Medio",
+    "tagline": "Precios de oro en tiempo real para el GCC y Egipto",
     "updatedAt": "Última actualización",
     "changeCountry": "Cambiar país",
     "selectCountry": "Elegir país",
@@ -32,10 +32,10 @@
     "about": "Acerca de"
   },
   "home": {
-    "heroTitle": "Precios reales de oro para compradores diarios",
-    "heroSubtitle": "En vivo por país y ciudad, con lingotes, monedas y mano de obra estimada.",
+    "heroTitle": "Precios de oro en tiempo real para compradores del GCC y Egipto",
+    "heroSubtitle": "Gramos, lingotes y monedas con actualizaciones precisas y contexto claro.",
     "ctaPrimary": "Ir a tu país",
-    "ctaSecondary": "Leer análisis diarios"
+    "ctaSecondary": "Leer análisis"
   },
   "country": {
     "title": "Precio del oro hoy en {country}",
@@ -45,9 +45,18 @@
     "karatTable": "Tabla de quilates",
     "barTable": "Lingotes",
     "coinTable": "Monedas de oro",
+    "localPerGramLabel": "Precio local por gramo",
+    "defaultKaratLabel": "Quilate común",
+    "karatLabel": "Quilate",
+    "priceLabel": "Precio",
+    "buySellLabel": "Comprar / Vender",
+    "weightLabel": "Peso",
+    "coinLabel": "Moneda",
+    "sourcesTitle": "Fuentes y metodología",
+    "sourcesBody": "Precio spot de mercados de lingotes + tipo de cambio local. Los precios son orientativos y pueden variar por mano de obra.",
     "metaDescription": "Precio del oro hoy en {country} con actualizaciones en vivo y análisis diarios.",
     "analysisTitle": "Resumen del mercado",
-    "analysisBody": "Los mercados locales muestran variaciones suaves por tipo de cambio y demanda estacional. Revisa las actualizaciones cada hora y compara el promedio del día.",
+    "analysisBody": "Los mercados locales se mueven con el tipo de cambio y la demanda estacional. Revisa las actualizaciones y compara el promedio diario.",
     "faqTitle": "Preguntas frecuentes",
     "faqOneQ": "¿Incluye mano de obra?",
     "faqOneA": "Los precios mostrados son del oro puro. La mano de obra varía por ciudad y vendedor.",

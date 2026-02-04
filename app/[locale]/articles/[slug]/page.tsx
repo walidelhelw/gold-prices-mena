@@ -29,7 +29,7 @@ export default async function ArticlePage({
     <div>
       <SiteHeader locale={locale} country={countries[0]} countries={countries} />
       <main className="container-page space-y-12 pb-16">
-        <article className="card p-8">
+        <article className="card p-8 text-start">
           <p className="text-xs uppercase tracking-[0.3em] text-brand-200/60" dir="ltr">
             {formatDate(article.publishedAt, locale)}
           </p>

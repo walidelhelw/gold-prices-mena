@@ -19,9 +19,16 @@ export function KaratTable({
       <div className="border-b border-brand-400/20 px-6 py-4 text-sm text-brand-200/70">
         {t("karatTable")}
       </div>
+      <div className="px-6 py-3 text-xs text-brand-200/70">
+        <div className="grid grid-cols-3 gap-4 text-start">
+          <span>{t("karatLabel")}</span>
+          <span>{t("priceLabel")}</span>
+          <span>{t("buySellLabel")}</span>
+        </div>
+      </div>
       <div className="divide-y divide-brand-400/10">
         {rows.map((row) => (
-          <div key={row.karat} className="grid grid-cols-3 gap-4 px-6 py-4 text-sm">
+          <div key={row.karat} className="grid grid-cols-3 gap-4 px-6 py-4 text-sm text-start">
             <div className="text-brand-50">
               {row.karat}
               {tCommon("karatSuffix")}
