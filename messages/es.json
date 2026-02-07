@@ -32,13 +32,22 @@
     "notFoundTitle": "Página no encontrada",
     "notFoundBody": "El enlace puede haber sido eliminado o cambiado.",
     "backHome": "Volver al inicio",
-    "disclaimer": "Los precios son orientativos y pueden variar según la ciudad y la mano de obra."
+    "disclaimer": "Los precios son orientativos y pueden variar según la ciudad y la mano de obra.",
+    "dealerBoard": "Panel de comercios",
+    "dealerBoardDesc": "Comercios ordenados por diferencial y frescura.",
+    "cityCompare": "Comparar ciudades",
+    "cityCompareDesc": "Compara el precio por gramo entre ciudades.",
+    "cityInsights": "Señales del mercado",
+    "cityInsightsDesc": "Postura conservadora con razones claras.",
+    "buyerGuide": "Guía del comprador",
+    "buyerGuideDesc": "Consejos prácticos para comparar y decidir mejor."
   },
   "nav": {
     "prices": "Precios",
     "articles": "Artículos",
     "calculator": "Calculadora",
-    "about": "Acerca de"
+    "about": "Acerca de",
+    "guides": "Guías"
   },
   "home": {
     "heroTitle": "Precios de oro en tiempo real para compradores del GCC y Egipto",
@@ -116,5 +125,56 @@
   "about": {
     "title": "Por qué nosotros",
     "body": "Nos enfocamos en compradores de oro con precios locales claros y guía práctica."
+  },
+  "dealer": {
+    "freshnessTitle": "Frescura de datos",
+    "freshnessStatus": {
+      "fresh": "Fresco",
+      "aging": "Envejeciendo",
+      "stale": "Desactualizado"
+    },
+    "sourceCount": "Fuentes: {count}",
+    "marketPosture": "Postura conservadora del mercado",
+    "posture": {
+      "buy_zone": "Zona de compra medida",
+      "watch": "Observar antes de comprar",
+      "wait": "Esperar mejor contexto"
+    },
+    "confidence": "Confianza",
+    "spreadMetric": "Diferencial promedio",
+    "trendMetric": "Tendencia diaria",
+    "premiumMetric": "Prima de ciudad",
+    "leaderboardTitle": "Ranking de comercios por diferencial",
+    "leaderboardSubtitle": "Comparación directa de precios locales.",
+    "buyPrice": "Precio de compra",
+    "sellPrice": "Precio de venta",
+    "spread": "Diferencial",
+    "contextTitle": "Enlaces inteligentes de comparación",
+    "contextSubtitle": "Ir a páginas que mejoran tu decisión.",
+    "dealersTitle": "Mejores comercios de oro en {city} - {country}",
+    "dealersSubtitle": "Ranking por diferencial, frescura y confiabilidad.",
+    "compareLink": "Comparar precios por ciudad",
+    "compareLinkDesc": "Descubre dónde el mismo quilate es más barato.",
+    "insightsLink": "Señales del mercado local",
+    "insightsLinkDesc": "Entiende tendencia y diferencial antes de actuar.",
+    "guideLink": "Guías prácticas de compra",
+    "guideLinkDesc": "Pasos claros para evitar mala sincronización.",
+    "cityPriceLink": "Volver a precio de la ciudad",
+    "cityPriceLinkDesc": "Precio en vivo, quilates, lingotes y monedas.",
+    "compareTitle": "Comparación de oro: {city} vs {target}",
+    "compareSubtitle": "Comparación directa del precio local por gramo.",
+    "delta": "Diferencia",
+    "winner": {
+      "tie": "Ambas ciudades están casi al mismo precio.",
+      "current": "{city} está más barata ahora.",
+      "target": "{city} está más barata ahora."
+    },
+    "switchCity": "Elige ciudad para comparar",
+    "insightsTitle": "Señales de mercado en {city} - {country}",
+    "insightsSubtitle": "Señal conservadora basada en tendencia, diferencial y frescura.",
+    "relatedGuides": "Guías relacionadas",
+    "currentPrice": "Precio actual",
+    "shadowTitle": "Ranking pendiente de activación",
+    "shadowBody": "Estamos en modo shadow ingest hasta cumplir los umbrales de preparación antes de publicar el ranking de comercios."
   }
 }

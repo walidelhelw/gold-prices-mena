@@ -32,13 +32,22 @@
     "notFoundTitle": "Page not found",
     "notFoundBody": "The link may have been removed or changed.",
     "backHome": "Back to home",
-    "disclaimer": "Prices are indicative and may vary by city and workmanship."
+    "disclaimer": "Prices are indicative and may vary by city and workmanship.",
+    "dealerBoard": "Dealer board",
+    "dealerBoardDesc": "Ranked dealers by spread quality and freshness.",
+    "cityCompare": "City comparison",
+    "cityCompareDesc": "Compare your city price per gram with nearby cities.",
+    "cityInsights": "Market insights",
+    "cityInsightsDesc": "Conservative local posture with clear rationale.",
+    "buyerGuide": "Buyer guide",
+    "buyerGuideDesc": "Practical tips for better timing and comparison."
   },
   "nav": {
     "prices": "Prices",
     "articles": "Articles",
     "calculator": "Calculator",
-    "about": "About"
+    "about": "About",
+    "guides": "Guides"
   },
   "home": {
     "heroTitle": "Real-time gold prices for GCC and Egypt buyers",
@@ -116,5 +125,56 @@
   "about": {
     "title": "Why us",
     "body": "We focus on gold buyers, not traders, with clear local prices and practical guidance."
+  },
+  "dealer": {
+    "freshnessTitle": "Data freshness",
+    "freshnessStatus": {
+      "fresh": "Fresh",
+      "aging": "Aging",
+      "stale": "Stale"
+    },
+    "sourceCount": "Sources: {count}",
+    "marketPosture": "Conservative market posture",
+    "posture": {
+      "buy_zone": "Measured buy zone",
+      "watch": "Watch before buying",
+      "wait": "Wait for better setup"
+    },
+    "confidence": "Confidence",
+    "spreadMetric": "Average spread",
+    "trendMetric": "Daily trend",
+    "premiumMetric": "City premium",
+    "leaderboardTitle": "Dealer spread leaderboard",
+    "leaderboardSubtitle": "Direct comparison across local dealer quotes.",
+    "buyPrice": "Buy price",
+    "sellPrice": "Sell price",
+    "spread": "Spread",
+    "contextTitle": "Smart comparison links",
+    "contextSubtitle": "Jump into pages that help you make better decisions.",
+    "dealersTitle": "Top gold dealers in {city} - {country}",
+    "dealersSubtitle": "Ranking based on spread, freshness, and source reliability.",
+    "compareLink": "Compare city prices",
+    "compareLinkDesc": "See where the same karat is cheaper.",
+    "insightsLink": "Local market insights",
+    "insightsLinkDesc": "Understand trend and spread before acting.",
+    "guideLink": "Actionable buyer guides",
+    "guideLinkDesc": "Practical steps to avoid poor timing.",
+    "cityPriceLink": "Back to city price page",
+    "cityPriceLinkDesc": "Live price, karats, bars, and coins.",
+    "compareTitle": "Gold price comparison: {city} vs {target}",
+    "compareSubtitle": "Direct local gram-price comparison at the same moment.",
+    "delta": "Delta",
+    "winner": {
+      "tie": "Both cities are currently near parity.",
+      "current": "{city} is currently cheaper.",
+      "target": "{city} is currently cheaper."
+    },
+    "switchCity": "Choose city to compare",
+    "insightsTitle": "Market insights in {city} - {country}",
+    "insightsSubtitle": "Conservative signal built from trend, spread, and freshness.",
+    "relatedGuides": "Related guides",
+    "currentPrice": "Current price",
+    "shadowTitle": "Leaderboard pending activation",
+    "shadowBody": "We are running shadow ingest until readiness thresholds are met before publishing dealer rankings."
   }
 }

@@ -20,6 +20,7 @@ import { getArticles } from "@/lib/data/articles";
 import { MarketSignals } from "@/components/prices/MarketSignals";
 import { HistoryChart, type HistoryPoint } from "@/components/prices/HistoryChart";
 import { ArticleCard } from "@/components/articles/ArticleCard";
+import { ContextLinks } from "@/components/layout/ContextLinks";
 
 export const revalidate = 60;
 
@@ -237,6 +238,33 @@ export default async function CountryPage({
             ))}
           </div>
         </section>
+
+        {activeCity ? (
+          <ContextLinks
+            links={[
+              {
+                href: `/${locale}/${countryData.code}/${activeCity.slug}/dealers`,
+                label: tCommon("dealerBoard"),
+                description: tCommon("dealerBoardDesc")
+              },
+              {
+                href: `/${locale}/${countryData.code}/${activeCity.slug}/compare`,
+                label: tCommon("cityCompare"),
+                description: tCommon("cityCompareDesc")
+              },
+              {
+                href: `/${locale}/${countryData.code}/${activeCity.slug}/insights`,
+                label: tCommon("cityInsights"),
+                description: tCommon("cityInsightsDesc")
+              },
+              {
+                href: `/${locale}/guides/gold-premium-guide`,
+                label: tCommon("buyerGuide"),
+                description: tCommon("buyerGuideDesc")
+              }
+            ]}
+          />
+        ) : null}
 
         <AdSlot slot="footer" />
       </main>

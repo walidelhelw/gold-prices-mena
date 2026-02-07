@@ -15,6 +15,7 @@ import { formatCurrency } from "@/lib/data/pricing";
 import { countries } from "@/lib/data/countries";
 import { getPriceSnapshot } from "@/lib/data/pricing-server";
 import { PriceStickyBar } from "@/components/prices/PriceStickyBar";
+import { ContextLinks } from "@/components/layout/ContextLinks";
 
 export const revalidate = 60;
 
@@ -115,6 +116,31 @@ export default async function CityPage({
 
         <BarsTable locale={locale} currency={snapshot.currency} rows={snapshot.bars} />
         <CoinsTable locale={locale} currency={snapshot.currency} rows={snapshot.coins} />
+
+        <ContextLinks
+          links={[
+            {
+              href: `/${locale}/${countryData.code}/${cityData.slug}/dealers`,
+              label: tCommon("dealerBoard"),
+              description: tCommon("dealerBoardDesc")
+            },
+            {
+              href: `/${locale}/${countryData.code}/${cityData.slug}/compare`,
+              label: tCommon("cityCompare"),
+              description: tCommon("cityCompareDesc")
+            },
+            {
+              href: `/${locale}/${countryData.code}/${cityData.slug}/insights`,
+              label: tCommon("cityInsights"),
+              description: tCommon("cityInsightsDesc")
+            },
+            {
+              href: `/${locale}/guides/gold-premium-guide`,
+              label: tCommon("buyerGuide"),
+              description: tCommon("buyerGuideDesc")
+            }
+          ]}
+        />
       </main>
       <SiteFooter />
     </div>

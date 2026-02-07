@@ -2,6 +2,8 @@ node_modules
 .next
 .playwright-cli
 output
+output-deploy.log
+test-results
 .env
 .env.local
 .env.*.local

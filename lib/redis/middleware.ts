@@ -35,18 +35,23 @@ export const setupAPIRoute = <T>(
     const userTier = getUserTier(request);
     const limit = tierLimits[userTier] ?? tierLimits.free;
     const rateKey = `${getClientKey(request)}:${options?.cacheKey ?? request.url}`;
-    const rateResult = checkRateLimit(rateKey, limit);
+    const rateResult = await checkRateLimit(rateKey, limit);
 
     if (!rateResult.allowed) {
       return NextResponse.json({ error: "Rate limit exceeded" }, { status: 429 });
     }
 
     if (options?.cacheKey && options.cacheTTL && request.method === "GET") {
-      const cached = getCache(`${options.cacheKey}:${request.url}`);
+      const cached = await getCache(`${options.cacheKey}:${request.url}`);
       if (cached) {
         return new NextResponse(cached, {
           status: 200,
-          headers: { "Content-Type": "application/json" }
+          headers: {
+            "Content-Type": "application/json",
+            "X-RateLimit-Remaining": String(rateResult.remaining),
+            "X-RateLimit-Reset": String(rateResult.resetAt ?? Date.now() + 60_000),
+            "X-Cache": "HIT"
+          }
         });
       }
     }
@@ -55,10 +60,16 @@ export const setupAPIRoute = <T>(
     if (result instanceof NextResponse) {
       return result;
     }
-    const response = NextResponse.json(result);
+    const response = NextResponse.json(result, {
+      headers: {
+        "X-RateLimit-Remaining": String(rateResult.remaining),
+        "X-RateLimit-Reset": String(rateResult.resetAt ?? Date.now() + 60_000),
+        "X-Cache": "MISS"
+      }
+    });
 
     if (options?.cacheKey && options.cacheTTL && request.method === "GET") {
-      setCache(`${options.cacheKey}:${request.url}`, JSON.stringify(result), options.cacheTTL);
+      await setCache(`${options.cacheKey}:${request.url}`, JSON.stringify(result), options.cacheTTL);
     }
 
     return response;

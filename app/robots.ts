@@ -5,8 +5,10 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/"
+      allow: "/",
+      disallow: ["/api/internal/", "/api/cron/", "/api/qstash/"]
     },
+    host: baseUrl,
     sitemap: `${baseUrl}/sitemap.xml`
   };
 }

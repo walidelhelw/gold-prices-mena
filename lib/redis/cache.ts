@@ -1,3 +1,5 @@
+import { isUpstashConfigured, upstashGet, upstashSetEx } from "./upstash";
+
 type CacheEntry = {
   value: string;
   expiresAt: number;
@@ -10,7 +12,14 @@ if (!globalCache.__goldCache) {
   globalCache.__goldCache = cacheStore;
 }
 
-export const getCache = (key: string) => {
+export const getCache = async (key: string) => {
+  if (isUpstashConfigured()) {
+    const cached = await upstashGet(key);
+    if (typeof cached === "string") {
+      return cached;
+    }
+  }
+
   const entry = cacheStore.get(key);
   if (!entry) return null;
   if (Date.now() > entry.expiresAt) {
@@ -20,7 +29,12 @@ export const getCache = (key: string) => {
   return entry.value;
 };
 
-export const setCache = (key: string, value: string, ttlSeconds: number) => {
+export const setCache = async (key: string, value: string, ttlSeconds: number) => {
+  if (isUpstashConfigured()) {
+    await upstashSetEx(key, ttlSeconds, value);
+    return;
+  }
+
   cacheStore.set(key, {
     value,
     expiresAt: Date.now() + ttlSeconds * 1000

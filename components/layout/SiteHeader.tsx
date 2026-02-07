@@ -34,6 +34,9 @@ export function SiteHeader({
           <Link className="rounded-full border border-brand-300/30 px-4 py-2" href={`/${locale}/about`}>
             {tNav("about")}
           </Link>
+          <Link className="rounded-full border border-brand-300/30 px-4 py-2" href={`/${locale}/guides/gold-premium-guide`}>
+            {tNav("guides")}
+          </Link>
         </nav>
       </div>
 
